@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lleida Tech IA · Consultoría de Automatización con IA — Inmobiliarias y Campings</title>
+  <meta name="description" content="Consultoría de automatización con IA en Lleida. Ayudamos a inmobiliarias y campings a no perder ni un cliente más por responder tarde. Respuesta en segundos, 24/7, en cualquier idioma." />
+  <meta property="og:title" content="Lleida Tech IA · Consultoría de Automatización con IA" />
+  <meta property="og:description" content="Cada lead sin responder es dinero que se va a tu competencia. Lo hacemos visible y lo recuperamos por ti." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ====== NAV ====== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#inicio" class="logo">
+        <span class="logo-mark">▲</span>
+        <span class="logo-text">Lleida <strong>Tech IA</strong></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#perdida">La pérdida invisible</a>
+        <a href="#sectores">Sectores</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#resenas">Reseñas</a>
+      </nav>
+      <a href="#contacto" class="btn btn-primary btn-nav">Reservar videollamada</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- ====== HERO con escena 3D ====== -->
+  <section class="hero" id="inicio">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content reveal">
+      <p class="hero-kicker">Consultoría de Automatización con IA · Lleida, Pirineo y Cataluña</p>
+      <h1>
+        ¿Cuántos clientes te escribieron <span class="accent">anoche</span><br />
+        y nadie les respondió?
+      </h1>
+      <p class="hero-sub">
+        Cada consulta sin responder es una venta o una reserva que se va a la competencia.
+        Ponemos un sistema que responde <strong>en segundos, 24/7 y en el idioma del cliente</strong>
+        — encima de lo que ya tienes, sin que cambies nada de cómo trabajas.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn btn-primary btn-lg">Reserva una videollamada de 20 min</a>
+        <a href="#calculadora" class="btn btn-ghost btn-lg">Calcula lo que estás perdiendo</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><span class="trust-num" data-count="80">0</span><span class="trust-pct">%</span><span class="trust-label">de los leads se pierden si no se responde en 5 minutos</span></div>
+        <div class="trust-item"><span class="trust-num" data-count="24">0</span><span class="trust-pct">/7</span><span class="trust-label">tu negocio responde aunque tú estés durmiendo</span></div>
+        <div class="trust-item"><span class="trust-num" data-count="2">0</span><span class="trust-pct">seg</span><span class="trust-label">tiempo medio de respuesta del sistema</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ====== LA PÉRDIDA INVISIBLE ====== -->
+  <section class="section section-dark" id="perdida">
+    <div class="container">
+      <p class="section-kicker reveal">El problema que no ves</p>
+      <h2 class="reveal">La pérdida invisible</h2>
+      <p class="section-lead reveal">
+        Tú solo ves a los clientes que llegan. No ves a los que escribieron un sábado a las 22h,
+        no recibieron respuesta y cerraron con otro. Nuestro trabajo como consultoría empieza ahí:
+        <strong>hacer visibles los agujeros por donde se te escapa el dinero</strong> — y taparlos.
+      </p>
+      <div class="cards-3d">
+        <article class="card card-tilt reveal">
+          <div class="card-icon">🕘</div>
+          <h3>Fuera de horario</h3>
+          <p>Viernes 19h, sábado 20h, domingo por la mañana. Justo cuando tu cliente tiene tiempo para buscar… tu negocio no contesta. El lunes ya es tarde.</p>
+        </article>
+        <article class="card card-tilt reveal">
+          <div class="card-icon">🏃</div>
+          <h3>El cliente no espera</h3>
+          <p>Si no respondes en minutos, llama a la siguiente agencia o reserva en el siguiente camping de Booking. No es que pierdas el lead: se lo regalas a tu competencia.</p>
+        </article>
+        <article class="card card-tilt reveal">
+          <div class="card-icon">🧾</div>
+          <h3>Nadie lo está midiendo</h3>
+          <p>¿Cuánto te costó el mes pasado responder tarde? Si no sabes el número, el número trabaja en tu contra. Nosotros lo ponemos en euros, delante de ti.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTORES ====== -->
+  <section class="section" id="sectores">
+    <div class="container">
+      <p class="section-kicker reveal">Para quién trabajamos</p>
+      <h2 class="reveal">Especialistas en tu sector, no genéricos</h2>
+      <p class="section-lead reveal">
+        Empezamos con agencias inmobiliarias de Lleida. Hoy también acompañamos a campings y alojamientos
+        del Pirineo y de toda Cataluña. Mismo problema de fondo, soluciones a medida de cada negocio.
+      </p>
+      <div class="sector-grid">
+        <article class="sector-card card-tilt reveal">
+          <div class="sector-head">
+            <span class="sector-emoji">🏠</span>
+            <h3>Agencias inmobiliarias</h3>
+          </div>
+          <ul>
+            <li>Respuesta inmediata a los leads de Idealista, Fotocasa y tu web — también el fin de semana.</li>
+            <li>Filtrado automático: a tu equipo solo le llegan los contactos con intención real de comprar o alquilar.</li>
+            <li>Agendado de visitas sin intervención humana: el sistema agenda, el agente aparece.</li>
+            <li>Seguimiento automático para que ningún contacto se quede en el olvido.</li>
+          </ul>
+          <p class="sector-loss">Una sola comisión perdida al mes son <strong>~36.000&nbsp;€ al año</strong> que se van sin que lo veas.</p>
+        </article>
+        <article class="sector-card card-tilt reveal">
+          <div class="sector-head">
+            <span class="sector-emoji">⛺</span>
+            <h3>Campings y alojamientos</h3>
+          </div>
+          <ul>
+            <li>Atiende consultas de web y WhatsApp a cualquier hora, también cuando recepción no da abasto en plena temporada.</li>
+            <li>Responde en el idioma del cliente — aunque escriba un francés a medianoche.</li>
+            <li>Comprueba disponibilidad y capta la reserva directa, sin pagar comisión a Booking.</li>
+            <li>Resuelve las preguntas de siempre (parcelas, mascotas, horarios, servicios) sin ocupar a tu equipo.</li>
+          </ul>
+          <p class="sector-loss">Cada reserva directa recuperada es una estancia completa <strong>sin comisión de intermediarios</strong>.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CÓMO FUNCIONA ====== -->
+  <section class="section section-dark" id="como-funciona">
+    <div class="container">
+      <p class="section-kicker reveal">Sin cambiar nada de lo que ya haces</p>
+      <h2 class="reveal">Cómo trabajamos contigo</h2>
+      <p class="section-lead reveal">
+        No reemplazamos tus herramientas ni tu forma de trabajar. El sistema se pone
+        <strong>encima de lo que ya tienes</strong>: tu web, tu WhatsApp, tus portales.
+        Lo montamos nosotros. Tú no tocas nada.
+      </p>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h3>Diagnóstico</h3>
+          <p>Videollamada de 20 minutos. Analizamos por dónde se te escapan clientes y lo cuantificamos en euros, con tus números, no con los nuestros.</p>
+        </div>
+        <div class="step-line" aria-hidden="true"></div>
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <h3>Implantación</h3>
+          <p>Montamos el sistema sobre tus canales actuales en días, no en meses. Sin obras, sin cambiar de programa, sin formar a nadie.</p>
+        </div>
+        <div class="step-line" aria-hidden="true"></div>
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <h3>Resultados desde la semana 1</h3>
+          <p>En las primeras dos semanas ya ves leads y reservas que antes se escapaban. Te acompañamos y ajustamos el sistema mes a mes, como tu consultoría de confianza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CALCULADORA ====== -->
+  <section class="section" id="calculadora">
+    <div class="container container-narrow">
+      <p class="section-kicker reveal">Hazlo con tus números</p>
+      <h2 class="reveal">¿Cuánto te cuesta no responder a tiempo?</h2>
+      <p class="section-lead reveal">No te lo decimos nosotros: calcúlalo tú. Mueve los controles con tus datos reales.</p>
+
+      <div class="calc card reveal">
+        <div class="calc-sector">
+          <button class="calc-tab active" data-sector="inmo">🏠 Inmobiliaria</button>
+          <button class="calc-tab" data-sector="camping">⛺ Camping</button>
+        </div>
+
+        <div class="calc-row">
+          <label for="calcLeads"><span id="calcLeadsLabel">Leads que se te escapan al mes</span> <strong id="calcLeadsVal">2</strong></label>
+          <input type="range" id="calcLeads" min="1" max="15" value="2" />
+        </div>
+        <div class="calc-row">
+          <label for="calcValue"><span id="calcValueLabel">Comisión media por operación (€)</span> <strong id="calcValueVal">3.000&nbsp;€</strong></label>
+          <input type="range" id="calcValue" min="500" max="9000" step="100" value="3000" />
+        </div>
+
+        <div class="calc-result">
+          <p>Estás dejando de ingresar aproximadamente</p>
+          <p class="calc-month"><span id="calcMonth">6.000</span> € / mes</p>
+          <p class="calc-year">Eso son <strong><span id="calcYear">72.000</span> € al año</strong> que se van a tu competencia.</p>
+          <a href="#contacto" class="btn btn-primary btn-lg">Quiero recuperar ese dinero</a>
+          <p class="calc-note">El diagnóstico de 20 minutos es gratuito. Recuperar uno solo de esos clientes ya paga el sistema muchas veces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== RESEÑAS ====== -->
+  <section class="section section-dark" id="resenas">
+    <div class="container">
+      <p class="section-kicker reveal">Negocios de aquí, como el tuyo</p>
+      <h2 class="reveal">Lo que dicen quienes ya no pierden clientes</h2>
+      <div class="reviews">
+        <article class="review card-tilt reveal">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p>«Antes los mensajes de Idealista del fin de semana los contestábamos el lunes. Ahora el sistema responde al momento y nos agenda las visitas solo. El primer mes recuperamos dos operaciones que antes habríamos perdido seguro.»</p>
+          <footer><strong>Jordi M.</strong><span>Agencia inmobiliaria · Lleida</span></footer>
+        </article>
+        <article class="review card-tilt reveal">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p>«En agosto recepción no daba abasto y las consultas de la web se quedaban sin contestar. Ahora responde solo, en francés, en inglés, a la hora que sea. Hemos subido las reservas directas y pagamos menos comisión a Booking.»</p>
+          <footer><strong>Núria P.</strong><span>Camping familiar · Pirineu de Lleida</span></footer>
+        </article>
+        <article class="review card-tilt reveal">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p>«Yo no entiendo de tecnología y no quería líos. Lo montaron ellos encima de nuestro WhatsApp y no hemos cambiado nada de cómo trabajamos. Solo veo que ahora ningún contacto se queda sin respuesta.»</p>
+          <footer><strong>Ramon S.</strong><span>Inmobiliaria · Comarques de Lleida</span></footer>
+        </article>
+        <article class="review card-tilt reveal">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p>«Lo que más me convenció fue que primero me enseñaron, con mis propios números, cuánto estaba perdiendo cada mes. A partir de ahí la decisión fue fácil. Son consultores, no vendedores.»</p>
+          <footer><strong>Marta C.</strong><span>Alojamiento rural · Alt Urgell</span></footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GARANTÍA ====== -->
+  <section class="section section-guarantee">
+    <div class="container container-narrow reveal">
+      <div class="guarantee card">
+        <div class="guarantee-icon">🛡️</div>
+        <h2>Cero riesgo para ti</h2>
+        <ul class="guarantee-list">
+          <li><strong>Diagnóstico gratuito.</strong> La primera videollamada no te cuesta nada y te llevas el cálculo de tu pérdida aunque no sigas con nosotros.</li>
+          <li><strong>Sin permanencia.</strong> Si no ves resultados, lo dejas. Así de simple.</li>
+          <li><strong>No cambias nada.</strong> Trabajamos sobre tus herramientas actuales. Si un día nos vamos, tu negocio sigue igual que estaba.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA FINAL / CONTACTO ====== -->
+  <section class="section section-cta" id="contacto">
+    <canvas id="cta-canvas" aria-hidden="true"></canvas>
+    <div class="container container-narrow cta-content reveal">
+      <h2>Cada día que pasa, alguien escribe<br />y nadie le responde.</h2>
+      <p class="section-lead">
+        Reserva una videollamada de 20 minutos. Te enseñamos el sistema funcionando en directo,
+        con un ejemplo hecho sobre tu propia web, y calculamos juntos lo que estás perdiendo.
+      </p>
+      <div class="cta-buttons">
+        <a class="btn btn-primary btn-lg" href="mailto:agenciatechia6@gmail.com?subject=Quiero%20una%20videollamada%20de%2020%20minutos&body=Hola%2C%20tengo%20un%20negocio%20(inmobiliaria%20%2F%20camping)%20y%20quiero%20el%20diagn%C3%B3stico%20gratuito.">📧 Escríbenos por email</a>
+        <a class="btn btn-whatsapp btn-lg" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%2020%20minutos" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+      </div>
+      <p class="cta-micro">Sin compromiso · Sin permanencia · Respuesta en menos de 24h</p>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <a href="#inicio" class="logo"><span class="logo-mark">▲</span><span class="logo-text">Lleida <strong>Tech IA</strong></span></a>
+        <p class="footer-tag">Consultoría de automatización con IA para inmobiliarias, campings y alojamientos.<br />Lleida · Pirineo · Cataluña</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#perdida">La pérdida invisible</a>
+        <a href="#sectores">Sectores</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#resenas">Reseñas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <p class="footer-copy">© 2026 Lleida Tech IA · agenciatechia6@gmail.com</p>
+    </div>
+  </footer>
+
+  <script src="js/vendor/three.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
