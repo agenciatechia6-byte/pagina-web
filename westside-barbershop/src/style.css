@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* ============ Tema WESTSIDE: monocromo estricto ============ */
+@theme {
+  --color-ink: #0a0a0a;      /* fondo */
+  --color-surface: #161616;  /* superficies */
+  --color-surface2: #1e1e1e; /* superficies elevadas */
+  --color-paper: #fafafa;    /* texto */
+  --color-line: #2a2a2a;     /* bordes */
+
+  --font-display: "Anton", "Archivo Black", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+/* Foco visible accesible sobre fondo negro */
+:focus-visible {
+  outline: 2px solid var(--color-paper);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ============ Botones (táctiles ≥44px) ============ */
+.btn-primary {
+  @apply inline-flex min-h-12 items-center justify-center rounded-full bg-paper px-7 text-sm font-semibold uppercase tracking-wide text-ink transition-transform duration-200 hover:scale-[1.03] active:scale-95;
+}
+.btn-outline {
+  @apply inline-flex min-h-12 items-center justify-center rounded-full border border-paper/40 px-7 text-sm font-semibold uppercase tracking-wide text-paper transition-colors duration-200 hover:border-paper hover:bg-paper/5;
+}
+
+/* ============ Tarjetas ============ */
+.card-service {
+  @apply rounded-xl border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-paper/40 hover:bg-surface2;
+}
+.card-review {
+  @apply rounded-xl border border-line bg-surface2 p-6;
+}
+.gallery-img {
+  @apply aspect-[4/5] w-full rounded-lg border border-line object-cover transition-transform duration-300 hover:scale-[1.02];
+}
+
+/* ============ Nav con fondo al hacer scroll ============ */
+#nav.scrolled {
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(12px);
+  border-color: var(--color-line);
+}
+.lang-btn[aria-pressed="true"] {
+  color: var(--color-paper);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ============ Micro-animaciones de aparición ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ Grano sutil en el hero ============ */
+.grain {
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn-primary, .card-service, .gallery-img { transition: none; }
+}

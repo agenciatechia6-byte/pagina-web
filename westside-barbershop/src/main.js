@@ -1,0 +1,131 @@
+/* ============================================================
+   WESTSIDE Barbershop — i18n ES/CA, WhatsApp, animaciones
+   ============================================================ */
+import "./style.css";
+import es from "./i18n/es.json";
+import ca from "./i18n/ca.json";
+
+// [PENDIENTE] Número real de WhatsApp del dueño (formato 34XXXXXXXXX, sin +)
+const WHATSAPP_NUMBER = "34XXXXXXXXX";
+
+const DICTS = { es, ca };
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- i18n: idioma en el hash (#ca), sin localStorage ---------- */
+function getLang() {
+  return location.hash.replace("#", "") === "ca" ? "ca" : "es";
+}
+
+function t(dict, key) {
+  return key.split(".").reduce((o, k) => (o ? o[k] : undefined), dict);
+}
+
+function applyLang(lang) {
+  const dict = DICTS[lang];
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const val = t(dict, el.dataset.i18n);
+    if (val) el.textContent = val;
+  });
+  document.querySelectorAll("[data-i18n-content]").forEach((el) => {
+    const val = t(dict, el.dataset.i18nContent);
+    if (val) el.setAttribute("content", val);
+  });
+
+  // Enlaces de WhatsApp con mensaje precargado en el idioma activo
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t(dict, "wa.message"))}`;
+  document.querySelectorAll("[data-wa]").forEach((a) => {
+    a.href = waUrl;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  // Estado visual del selector
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    const active = btn.dataset.lang === lang;
+    btn.setAttribute("aria-pressed", String(active));
+    btn.classList.toggle("text-paper/50", !active);
+  });
+}
+
+function initI18n() {
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.dataset.lang;
+      // Guardamos la preferencia en el propio hash de la URL (sin localStorage)
+      history.replaceState(null, "", lang === "ca" ? "#ca" : location.pathname);
+      applyLang(lang);
+    });
+  });
+  window.addEventListener("hashchange", () => {
+    if (["", "#", "#ca", "#es"].includes(location.hash)) applyLang(getLang());
+  });
+  applyLang(getLang());
+}
+
+/* ---------- Nav: fondo al hacer scroll ---------- */
+function initNav() {
+  const nav = document.getElementById("nav");
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 24);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+/* ---------- Micro-animaciones de aparición ---------- */
+function initReveals() {
+  const els = document.querySelectorAll(".reveal");
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    els.forEach((el) => el.classList.add("visible"));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          io.unobserve(e.target);
+        }
+      }),
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+  els.forEach((el) => io.observe(el));
+}
+
+/* ---------- Embed de Instagram: cargar solo al llegar a la sección ---------- */
+function initInstagramEmbed() {
+  const target = document.getElementById("ig-embed");
+  if (!target) return;
+  const load = () => {
+    if (document.getElementById("ig-embed-script")) return;
+    const s = document.createElement("script");
+    s.id = "ig-embed-script";
+    s.async = true;
+    s.src = "https://www.instagram.com/embed.js";
+    document.body.appendChild(s);
+    // Si el script no carga (Instagram caído/bloqueado), el blockquote
+    // conserva el fallback: miniatura + "Ver vídeo en Instagram".
+  };
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          load();
+          io.disconnect();
+        }
+      },
+      { rootMargin: "400px" }
+    );
+    io.observe(target);
+  } else {
+    load();
+  }
+}
+
+/* ---------- Año del footer ---------- */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+initI18n();
+initNav();
+initReveals();
+initInstagramEmbed();

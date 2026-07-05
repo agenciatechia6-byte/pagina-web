@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "description": "Barberia urbana a Lleida. Tall home 12 €, tall + barba 18 €, dissenys i celles. Assessorament d'imatge gratuït. Reserva per WhatsApp."
+  },
+  "nav": {
+    "services": "Serveis",
+    "about": "Nosaltres",
+    "work": "Feines",
+    "reviews": "Opinions",
+    "where": "On som"
+  },
+  "hero": {
+    "title": "La teva millor versió comença a la cadira",
+    "subtitle": "Barberia a Lleida · Assessorament d'imatge gratuït",
+    "ctaPrimary": "Reserva per WhatsApp",
+    "ctaSecondary": "Veure feines a Instagram"
+  },
+  "services": {
+    "title": "Serveis",
+    "lead": "Preus clars. Sense sorpreses. Pagues en sortir amb el tall que volies.",
+    "s1": "Tall home",
+    "s2": "Tall + barba",
+    "s3": "Tall amb disseny",
+    "s4": "Tall + celles",
+    "s5": "Assessorament d'imatge",
+    "free": "Gratis",
+    "freeNote": "Et diem quin tall t'afavoreix abans de tocar la màquina.",
+    "cta": "Reserva per WhatsApp"
+  },
+  "about": {
+    "title": "Nosaltres",
+    "line1": "Tallem com es talla ara, no com es tallava fa deu anys.",
+    "line2": "Fades, dissenys, barba i celles — amb la música posada i sense presses. Entres a per un tall i surts amb la teva millor versió.",
+    "line3": "Si no ho tens clar, t'assessorem gratis: mirem el teu rostre, el teu cabell i el teu rotllo, i et diem què t'afavoreix.",
+    "videoCta": "Veure vídeo a Instagram"
+  },
+  "work": {
+    "title": "Feines",
+    "lead": "Talls reals, de clients reals. El que veus és el que hi ha.",
+    "cta": "Més a @westside_barbershop.es"
+  },
+  "reviews": {
+    "title": "Opinions",
+    "badge": "a Google",
+    "r1": "«El millor fade que m'han fet a Lleida. T'aconsellen quin tall et queda millor i es nota.»",
+    "r2": "«Bon rotllo, bona música i un tall de 10. Vaig sortir millor que a la foto que els vaig ensenyar.»",
+    "r3": "«Vaig reservar per WhatsApp en un minut. Puntuals, ràpids i el disseny va quedar netíssim.»"
+  },
+  "where": {
+    "title": "On som",
+    "hoursTitle": "Horari",
+    "hours": "Consulta l'horari per WhatsApp o Instagram.",
+    "directions": "Com arribar-hi",
+    "cta": "Escriu-nos per WhatsApp"
+  },
+  "wa": {
+    "message": "Hola! Vull reservar cita a WestSide 💈"
+  }
+}

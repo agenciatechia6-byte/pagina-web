@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "description": "Barbería urbana en Lleida. Corte hombre 12 €, corte + barba 18 €, diseños y cejas. Asesoramiento de imagen gratuito. Reserva por WhatsApp."
+  },
+  "nav": {
+    "services": "Servicios",
+    "about": "Nosotros",
+    "work": "Trabajos",
+    "reviews": "Opiniones",
+    "where": "Dónde"
+  },
+  "hero": {
+    "title": "Tu mejor versión empieza en la silla",
+    "subtitle": "Barbería en Lleida · Asesoramiento de imagen gratuito",
+    "ctaPrimary": "Reserva por WhatsApp",
+    "ctaSecondary": "Ver trabajos en Instagram"
+  },
+  "services": {
+    "title": "Servicios",
+    "lead": "Precios claros. Sin sorpresas. Pagas al salir con el corte que querías.",
+    "s1": "Corte hombre",
+    "s2": "Corte + barba",
+    "s3": "Corte con diseño",
+    "s4": "Corte + cejas",
+    "s5": "Asesoramiento de imagen",
+    "free": "Gratis",
+    "freeNote": "Te decimos qué corte te favorece antes de tocar la máquina.",
+    "cta": "Reserva por WhatsApp"
+  },
+  "about": {
+    "title": "Nosotros",
+    "line1": "Cortamos como se corta ahora, no como se cortaba hace diez años.",
+    "line2": "Fades, diseños, barba y cejas — con la música puesta y sin prisas. Entras a por un corte y sales con tu mejor versión.",
+    "line3": "Si no lo tienes claro, te asesoramos gratis: miramos tu rostro, tu pelo y tu rollo, y te decimos qué te favorece.",
+    "videoCta": "Ver vídeo en Instagram"
+  },
+  "work": {
+    "title": "Trabajos",
+    "lead": "Cortes reales, de clientes reales. Lo que ves es lo que hay.",
+    "cta": "Más en @westside_barbershop.es"
+  },
+  "reviews": {
+    "title": "Opiniones",
+    "badge": "en Google",
+    "r1": "«El mejor fade que me han hecho en Lleida. Te aconsejan qué corte te queda mejor y se nota.»",
+    "r2": "«Buen rollo, buena música y un corte de 10. Salí mejor que en la foto que les enseñé.»",
+    "r3": "«Reservé por WhatsApp en un minuto. Puntuales, rápidos y el diseño quedó limpísimo.»"
+  },
+  "where": {
+    "title": "Dónde estamos",
+    "hoursTitle": "Horario",
+    "hours": "Consulta el horario por WhatsApp o Instagram.",
+    "directions": "Cómo llegar",
+    "cta": "Escríbenos por WhatsApp"
+  },
+  "wa": {
+    "message": "Hola! Quiero reservar cita en WestSide 💈"
+  }
+}
