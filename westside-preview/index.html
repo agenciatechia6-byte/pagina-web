@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>WESTSIDE Barbershop — Barbería en Lleida</title>
+  <meta name="description" data-i18n-content="meta.description"
+    content="Barbería urbana en Lleida. Corte hombre 12 €, corte + barba 18 €, diseños y cejas. Asesoramiento de imagen gratuito. Reserva por WhatsApp." />
+
+  <!-- Open Graph (lo que se ve al compartir el link desde Instagram) -->
+  <!-- [PENDIENTE] Cuando haya dominio propio, sustituir las URLs absolutas de og:url y og:image -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WestSide Barbershop" />
+  <meta property="og:title" content="WESTSIDE Barbershop — Barbería en Lleida" />
+  <meta property="og:description" content="Cortes, barba y diseños. Asesoramiento de imagen gratuito. Reserva por WhatsApp." />
+  <meta property="og:url" content="https://westsidebarbershop.es/" />
+  <meta property="og:image" content="https://westsidebarbershop.es/img/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="ca_ES" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WESTSIDE Barbershop — Barbería en Lleida" />
+  <meta name="twitter:description" content="Cortes, barba y diseños. Asesoramiento de imagen gratuito. Reserva por WhatsApp." />
+  <meta name="twitter:image" content="https://westsidebarbershop.es/img/og.png" />
+
+  <!-- Iconos -->
+  <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+
+  <!-- Fuentes: Anton (display) + Inter (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org: Barbershop (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Barbershop",
+    "name": "WestSide Barbershop",
+    "alternateName": "WESTSIDE",
+    "description": "Barbería urbana en Lleida. Cortes, barba, diseños y asesoramiento de imagen gratuito.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer dels Comtes d'Urgell, 8",
+      "postalCode": "25004",
+      "addressLocality": "Lleida",
+      "addressRegion": "Catalunya",
+      "addressCountry": "ES"
+    },
+    "telephone": "+34XXXXXXXXX",
+    "priceRange": "€",
+    "image": "https://westsidebarbershop.es/img/og.png",
+    "url": "https://westsidebarbershop.es/",
+    "sameAs": ["https://www.instagram.com/westside_barbershop.es/"]
+  }
+  </script>
+  <!-- [PENDIENTE] Añadir "openingHoursSpecification" al JSON-LD cuando el dueño confirme horarios -->
+
+  <script type="module" crossorigin src="./assets/index-CAU-TuE4.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-RMr_0Gom.css">
+</head>
+
+<body class="bg-ink text-paper font-body antialiased">
+
+  <!-- ================= NAV ================= -->
+  <header id="nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-colors duration-300">
+    <div class="mx-auto flex h-16 max-w-[1200px] items-center gap-4 px-5">
+      <!-- [PENDIENTE: archivo del logo — de momento, texto] -->
+      <a href="#hero" class="font-display text-xl tracking-tight" aria-label="WESTSIDE, inicio">WESTSIDE</a>
+
+      <nav class="ml-auto hidden items-center gap-6 text-sm text-paper/70 md:flex" aria-label="Secciones">
+        <a class="transition-colors hover:text-paper" href="#servicios" data-i18n="nav.services">Servicios</a>
+        <a class="transition-colors hover:text-paper" href="#nosotros" data-i18n="nav.about">Nosotros</a>
+        <a class="transition-colors hover:text-paper" href="#trabajos" data-i18n="nav.work">Trabajos</a>
+        <a class="transition-colors hover:text-paper" href="#opiniones" data-i18n="nav.reviews">Opiniones</a>
+        <a class="transition-colors hover:text-paper" href="#donde" data-i18n="nav.where">Dónde</a>
+      </nav>
+
+      <!-- Selector de idioma -->
+      <div class="ml-auto flex items-center gap-1 text-sm md:ml-4" role="group" aria-label="Idioma">
+        <button data-lang="es" class="lang-btn min-h-11 min-w-11 rounded px-2 font-semibold" aria-pressed="true">ES</button>
+        <span class="text-paper/30">|</span>
+        <button data-lang="ca" class="lang-btn min-h-11 min-w-11 rounded px-2 font-semibold text-paper/50" aria-pressed="false">CA</button>
+      </div>
+
+      <a href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener"
+         class="grid min-h-11 min-w-11 place-items-center text-paper/70 transition-colors hover:text-paper" aria-label="Instagram de WestSide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section id="hero" class="relative flex min-h-svh items-end overflow-hidden">
+    <!-- [FOTO: hero — sustituir /public/img/hero.webp por foto real del local o de un corte] -->
+    <img src="./img/hero.webp" alt="Interior de WestSide Barbershop en Lleida" fetchpriority="high"
+         class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" aria-hidden="true"></div>
+    <div class="grain absolute inset-0" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto w-full max-w-[1200px] px-5 pb-16 pt-32">
+      <h1 class="font-display text-[clamp(3rem,13vw,8.5rem)] uppercase leading-[0.95] tracking-tight" data-i18n="hero.title">
+        Tu mejor versión empieza en la silla
+      </h1>
+      <p class="mt-5 max-w-xl text-base text-paper/80 sm:text-lg" data-i18n="hero.subtitle">
+        Barbería en Lleida · Asesoramiento de imagen gratuito
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a data-wa class="btn-primary" href="#" data-i18n="hero.ctaPrimary">Reserva por WhatsApp</a>
+        <a class="btn-outline" href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener" data-i18n="hero.ctaSecondary">
+          Ver trabajos en Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICIOS ================= -->
+  <section id="servicios" class="mx-auto max-w-[1200px] scroll-mt-20 px-5 py-24">
+    <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="services.title">Servicios</h2>
+    <p class="reveal mt-4 max-w-lg text-paper/60" data-i18n="services.lead">Precios claros. Sin sorpresas. Pagas al salir con el corte que querías.</p>
+
+    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="reveal card-service">
+        <h3 class="text-sm font-medium uppercase tracking-widest text-paper/60" data-i18n="services.s1">Corte hombre</h3>
+        <p class="mt-3 font-display text-5xl">12&nbsp;€</p>
+      </div>
+      <div class="reveal card-service">
+        <h3 class="text-sm font-medium uppercase tracking-widest text-paper/60" data-i18n="services.s2">Corte + barba</h3>
+        <p class="mt-3 font-display text-5xl">18&nbsp;€</p>
+      </div>
+      <div class="reveal card-service">
+        <h3 class="text-sm font-medium uppercase tracking-widest text-paper/60" data-i18n="services.s3">Corte con diseño</h3>
+        <p class="mt-3 font-display text-5xl">15&nbsp;€</p>
+      </div>
+      <div class="reveal card-service">
+        <h3 class="text-sm font-medium uppercase tracking-widest text-paper/60" data-i18n="services.s4">Corte + cejas</h3>
+        <p class="mt-3 font-display text-5xl">14&nbsp;€</p>
+      </div>
+      <!-- Destacada: asesoramiento gratis -->
+      <div class="reveal card-service border-paper sm:col-span-2 lg:col-span-1">
+        <h3 class="text-sm font-medium uppercase tracking-widest" data-i18n="services.s5">Asesoramiento de imagen</h3>
+        <p class="mt-3 font-display text-5xl uppercase" data-i18n="services.free">Gratis</p>
+        <p class="mt-3 text-sm text-paper/70" data-i18n="services.freeNote">Te decimos qué corte te favorece antes de tocar la máquina.</p>
+      </div>
+    </div>
+
+    <div class="reveal mt-10">
+      <a data-wa class="btn-primary" href="#" data-i18n="services.cta">Reserva por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- ================= NOSOTROS ================= -->
+  <section id="nosotros" class="scroll-mt-20 border-y border-line bg-surface">
+    <div class="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-24 lg:grid-cols-2">
+      <div>
+        <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="about.title">Nosotros</h2>
+        <p class="reveal mt-6 max-w-md text-lg text-paper/80" data-i18n="about.line1">Cortamos como se corta ahora, no como se cortaba hace diez años.</p>
+        <p class="reveal mt-4 max-w-md text-paper/60" data-i18n="about.line2">Fades, diseños, barba y cejas — con la música puesta y sin prisas. Entras a por un corte y sales con tu mejor versión.</p>
+        <p class="reveal mt-4 max-w-md text-paper/60" data-i18n="about.line3">Si no lo tienes claro, te asesoramos gratis: miramos tu rostro, tu pelo y tu rollo, y te decimos qué te favorece.</p>
+      </div>
+
+      <!-- Vídeo de presentación: embed oficial de Instagram con fallback -->
+      <div class="reveal">
+        <div id="ig-embed" class="overflow-hidden rounded-xl border border-line bg-surface2">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DP66UF6iFrn/" data-instgrm-version="14"
+            style="background:#161616; border:0; margin:0; padding:0; width:100%;">
+            <!-- Fallback mientras carga el embed (o si Instagram está bloqueado) -->
+            <a href="https://www.instagram.com/p/DP66UF6iFrn/" target="_blank" rel="noopener"
+               class="flex aspect-[4/5] flex-col items-center justify-center gap-4 p-8 text-center">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FAFAFA" stroke-width="1.5" aria-hidden="true">
+                <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="#FAFAFA" stroke="none"/>
+              </svg>
+              <span class="font-display text-2xl uppercase text-paper" data-i18n="about.videoCta">Ver vídeo en Instagram</span>
+              <span class="text-sm text-paper/50">@westside_barbershop.es</span>
+            </a>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRABAJOS ================= -->
+  <section id="trabajos" class="mx-auto max-w-[1200px] scroll-mt-20 px-5 py-24">
+    <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="work.title">Trabajos</h2>
+    <p class="reveal mt-4 max-w-lg text-paper/60" data-i18n="work.lead">Cortes reales, de clientes reales. Lo que ves es lo que hay.</p>
+
+    <!-- Grid manual de fotos locales (sin API de Instagram: más rápido y fiable) -->
+    <div class="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+      <!-- [FOTO: corte 1..8 — sustituir /public/img/corte-0N.webp por fotos reales del Instagram, 4:5] -->
+      <img class="reveal gallery-img" loading="lazy" src="./img/corte-01.webp" width="800" height="1000" alt="Corte degradado con diseño, WestSide Barbershop" />
+      <img class="reveal gallery-img" loading="lazy" src="./img/corte-02.webp" width="800" height="1000" alt="Fade medio con textura arriba" />
+      <img class="reveal gallery-img" loading="lazy" src="./img/corte-03.webp" width="800" height="1000" alt="Corte y arreglo de barba" />
+      <img class="reveal gallery-img" loading="lazy" src="./img/corte-04.webp" width="800" height="1000" alt="Diseño a máquina en el lateral" />
+      <img class="reveal gallery-img" loading="lazy" src="./img/corte-05.webp" width="800" height="1000" alt="Corte clásico moderno con acabado pulido" />
+      <img class="reveal gallery-img" loading="lazy" src="./img/corte-06.webp" width="800" height="1000" alt="Fade alto con línea marcada" />
+      <img class="reveal gallery-img" loading="lazy" src="./img/corte-07.webp" width="800" height="1000" alt="Corte rizado con definición" />
+      <img class="reveal gallery-img" loading="lazy" src="./img/corte-08.webp" width="800" height="1000" alt="Corte y cejas perfiladas" />
+    </div>
+
+    <div class="reveal mt-10">
+      <a class="btn-outline" href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener" data-i18n="work.cta">
+        Más en @westside_barbershop.es
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= OPINIONES ================= -->
+  <section id="opiniones" class="scroll-mt-20 border-y border-line bg-surface">
+    <div class="mx-auto max-w-[1200px] px-5 py-24">
+      <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="reviews.title">Opiniones</h2>
+
+      <!-- [PENDIENTE] Badge: enlazar al perfil real de Google Business del dueño -->
+      <a class="reveal mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface2 px-4 text-sm"
+         href="https://www.google.com/maps/search/WestSide+Barbershop+Lleida" target="_blank" rel="noopener">
+        <span class="text-paper" aria-hidden="true">★★★★★</span>
+        <span class="text-paper/70" data-i18n="reviews.badge">en Google</span>
+      </a>
+
+      <div class="mt-12 grid gap-4 md:grid-cols-3">
+        <!-- [PENDIENTE] Sustituir estas 3 reseñas por reseñas REALES copiadas del perfil de Google del dueño -->
+        <figure class="reveal card-review">
+          <p aria-label="5 de 5 estrellas" class="tracking-widest">★★★★★</p>
+          <blockquote class="mt-3 text-sm text-paper/80" data-i18n="reviews.r1">«El mejor fade que me han hecho en Lleida. Te aconsejan qué corte te queda mejor y se nota.»</blockquote>
+          <figcaption class="mt-4 text-sm font-semibold">Marc</figcaption>
+        </figure>
+        <figure class="reveal card-review">
+          <p aria-label="5 de 5 estrellas" class="tracking-widest">★★★★★</p>
+          <blockquote class="mt-3 text-sm text-paper/80" data-i18n="reviews.r2">«Buen rollo, buena música y un corte de 10. Salí mejor que en la foto que les enseñé.»</blockquote>
+          <figcaption class="mt-4 text-sm font-semibold">Adrià</figcaption>
+        </figure>
+        <figure class="reveal card-review">
+          <p aria-label="5 de 5 estrellas" class="tracking-widest">★★★★★</p>
+          <blockquote class="mt-3 text-sm text-paper/80" data-i18n="reviews.r3">«Reservé por WhatsApp en un minuto. Puntuales, rápidos y el diseño quedó limpísimo.»</blockquote>
+          <figcaption class="mt-4 text-sm font-semibold">Hugo</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DÓNDE ESTAMOS ================= -->
+  <section id="donde" class="mx-auto max-w-[1200px] scroll-mt-20 px-5 py-24">
+    <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="where.title">Dónde estamos</h2>
+
+    <div class="mt-12 grid gap-10 lg:grid-cols-2">
+      <div>
+        <p class="reveal text-lg">Carrer dels Comtes d'Urgell, 8<br />25004 Lleida</p>
+
+        <h3 class="reveal mt-8 text-sm font-medium uppercase tracking-widest text-paper/60" data-i18n="where.hoursTitle">Horario</h3>
+        <!-- [PENDIENTE] Horarios reales del dueño -->
+        <p class="reveal mt-2 text-paper/80" data-i18n="where.hours">Consulta el horario por WhatsApp o Instagram.</p>
+
+        <div class="reveal mt-8 flex flex-col gap-3 sm:flex-row">
+          <a class="btn-primary" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/dir/?api=1&destination=Carrer+dels+Comtes+d'Urgell+8+25004+Lleida"
+             data-i18n="where.directions">Cómo llegar</a>
+          <a data-wa class="btn-outline" href="#" data-i18n="where.cta">Escríbenos por WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="reveal overflow-hidden rounded-xl border border-line">
+        <iframe
+          src="https://www.google.com/maps?q=Carrer+dels+Comtes+d'Urgell+8,+25004+Lleida&output=embed"
+          width="100%" height="380" style="border:0; filter: grayscale(1) invert(0.9) contrast(0.9);"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa: WestSide Barbershop, Carrer dels Comtes d'Urgell 8, Lleida"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-line bg-surface">
+    <div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-5 py-12 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="font-display text-2xl tracking-tight">WESTSIDE</p>
+        <p class="mt-2 text-sm text-paper/50">Carrer dels Comtes d'Urgell, 8 · 25004 Lleida</p>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a data-wa class="min-h-11 content-center text-paper/70 transition-colors hover:text-paper" href="#">WhatsApp</a>
+        <a class="min-h-11 content-center text-paper/70 transition-colors hover:text-paper" href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p class="text-xs text-paper/40">
+        © <span id="year">2026</span> WestSide Barbershop
+        <!-- [OPCIONAL — preguntar a Elias] · <a href="#" class="underline">Web por Lleida Tech IA</a> -->
+      </p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a data-wa href="#" aria-label="Reservar por WhatsApp"
+     class="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-paper text-ink shadow-[0_8px_30px_rgba(0,0,0,0.6)] transition-transform hover:scale-105">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2a9.9 9.9 0 0 0-8.5 15.1L2 22l5-1.4A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8Zm-3.1 4c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.4-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-2.9c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.1-.5l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5Z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
