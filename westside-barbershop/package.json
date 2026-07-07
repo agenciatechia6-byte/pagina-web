@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^6.3.5",
+    "@tailwindcss/vite": "^4.1.8",
     "tailwindcss": "^4.1.8",
-    "@tailwindcss/vite": "^4.1.8"
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "three": "^0.178.0"
   }
 }

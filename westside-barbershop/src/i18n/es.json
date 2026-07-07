@@ -13,7 +13,9 @@
     "title": "Tu mejor versión empieza en la silla",
     "subtitle": "Barbería en Lleida · Asesoramiento de imagen gratuito",
     "ctaPrimary": "Reserva por WhatsApp",
-    "ctaSecondary": "Ver trabajos en Instagram"
+    "ctaSecondary": "Ver trabajos en Instagram",
+    "reelPoster": "Ver el reel",
+    "reelFallback": "¿No se ve el vídeo? Ábrelo en Instagram"
   },
   "services": {
     "title": "Servicios",
@@ -32,7 +34,7 @@
     "line1": "Cortamos como se corta ahora, no como se cortaba hace diez años.",
     "line2": "Fades, diseños, barba y cejas — con la música puesta y sin prisas. Entras a por un corte y sales con tu mejor versión.",
     "line3": "Si no lo tienes claro, te asesoramos gratis: miramos tu rostro, tu pelo y tu rollo, y te decimos qué te favorece.",
-    "videoCta": "Ver vídeo en Instagram"
+    "cta": "Síguenos en Instagram"
   },
   "work": {
     "title": "Trabajos",

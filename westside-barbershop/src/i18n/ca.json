@@ -13,7 +13,9 @@
     "title": "La teva millor versió comença a la cadira",
     "subtitle": "Barberia a Lleida · Assessorament d'imatge gratuït",
     "ctaPrimary": "Reserva per WhatsApp",
-    "ctaSecondary": "Veure feines a Instagram"
+    "ctaSecondary": "Veure feines a Instagram",
+    "reelPoster": "Veure el reel",
+    "reelFallback": "No es veu el vídeo? Obre'l a Instagram"
   },
   "services": {
     "title": "Serveis",
@@ -32,7 +34,7 @@
     "line1": "Tallem com es talla ara, no com es tallava fa deu anys.",
     "line2": "Fades, dissenys, barba i celles — amb la música posada i sense presses. Entres a per un tall i surts amb la teva millor versió.",
     "line3": "Si no ho tens clar, t'assessorem gratis: mirem el teu rostre, el teu cabell i el teu rotllo, i et diem què t'afavoreix.",
-    "videoCta": "Veure vídeo a Instagram"
+    "cta": "Segueix-nos a Instagram"
   },
   "work": {
     "title": "Feines",

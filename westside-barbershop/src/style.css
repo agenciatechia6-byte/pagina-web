@@ -12,6 +12,13 @@
   --font-body: "Inter", system-ui, sans-serif;
 }
 
+/* Red de seguridad contra desbordamiento horizontal (formas flotantes en
+   rotación, línea SVG). clip no crea contenedor de scroll ni rompe el nav fijo. */
+html,
+body {
+  overflow-x: clip;
+}
+
 /* Foco visible accesible sobre fondo negro */
 :focus-visible {
   outline: 2px solid var(--color-paper);
@@ -61,6 +68,124 @@
   transform: translateY(0);
 }
 
+/* Aparición con perspectiva 3D (tarjetas y galería) */
+.reveal-3d {
+  opacity: 0;
+  transform: perspective(900px) rotateX(14deg) translateY(46px);
+  transform-origin: center bottom;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+.reveal-3d.visible {
+  opacity: 1;
+  transform: perspective(900px) rotateX(0deg) translateY(0);
+}
+/* Cuando la tarjeta ya es visible, el tilt del cursor responde rápido */
+.tilt-ready:hover {
+  transition: transform 0.12s ease-out;
+}
+
+/* ============ Línea de transiciones (tracing beam) ============ */
+.tracing-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  pointer-events: none;
+  overflow: visible;
+}
+.tl-track {
+  fill: none;
+  stroke: #262626;
+  stroke-width: 1.5;
+}
+.tl-beam {
+  fill: none;
+  stroke: #fafafa;
+  stroke-width: 2;
+  stroke-linecap: round;
+  /* El glow vive solo en la cabeza (.tl-head): un drop-shadow sobre el trazo
+     completo, que abarca todo el alto del documento, obliga a re-rasterizar
+     miles de px en cada frame de scroll. */
+}
+.tl-head {
+  fill: #fafafa;
+  filter: drop-shadow(0 0 9px rgba(255, 255, 255, 0.9));
+  transition: opacity 0.3s ease;
+}
+.tl-head.hidden-head {
+  opacity: 0;
+}
+.tl-end {
+  fill: none;
+  stroke: #fafafa;
+  stroke-width: 1.5;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.tl-end.active {
+  animation: tlPulse 1.6s ease-out infinite;
+}
+@keyframes tlPulse {
+  0% { transform: scale(0.55); opacity: 0.9; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* ============ Escena 3D del hero ============ */
+.hero-3d {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============ Formas geométricas flotantes (parallax) ============ */
+.has-floats {
+  position: relative;
+  /* Propio stacking context: la forma (z-index:-1) se pinta sobre el fondo de
+     la sección pero bajo su contenido — si no, en secciones con fondo opaco
+     (bg-surface) la forma quedaba tapada e invisible. */
+  isolation: isolate;
+}
+.float-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  transform: translate3d(0, var(--parallax, 0px), 0);
+  will-change: transform;
+}
+.float-shape::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(250, 250, 250, 0.09);
+  animation: floatSpin 46s linear infinite;
+  /* Longhand tras el shorthand: el desfase por forma llega al pseudo-elemento
+     vía la custom property que fija el JS. */
+  animation-delay: var(--spin-delay, 0s);
+}
+.float-ring::before {
+  border-radius: 9999px;
+  border-style: dashed;
+}
+.float-square::before {
+  border-radius: 18px;
+}
+@keyframes floatSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============ Marco del reel en el hero ============ */
+.reel-frame {
+  animation: reelFloat 7s ease-in-out infinite;
+}
+@keyframes reelFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 /* ============ Grano sutil en el hero ============ */
 .grain {
   opacity: 0.5;
@@ -70,6 +195,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal, .reveal-3d { opacity: 1; transform: none; transition: none; }
   .btn-primary, .card-service, .gallery-img { transition: none; }
+  .reel-frame { animation: none; }
+  .float-shape::before { animation: none; }
+  .tl-end.active { animation: none; opacity: 0.7; }
 }

@@ -4,6 +4,8 @@
 import "./style.css";
 import es from "./i18n/es.json";
 import ca from "./i18n/ca.json";
+import { initTracingLine } from "./effects/tracing-line.js";
+import { initFloatingShapes, initMagneticButtons, initTiltCards } from "./effects/ambient.js";
 
 // [PENDIENTE] Número real de WhatsApp del dueño (formato 34XXXXXXXXX, sin +)
 const WHATSAPP_NUMBER = "34XXXXXXXXX";
@@ -74,7 +76,7 @@ function initNav() {
 
 /* ---------- Micro-animaciones de aparición ---------- */
 function initReveals() {
-  const els = document.querySelectorAll(".reveal");
+  const els = document.querySelectorAll(".reveal, .reveal-3d");
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     els.forEach((el) => el.classList.add("visible"));
     return;
@@ -92,34 +94,20 @@ function initReveals() {
   els.forEach((el) => io.observe(el));
 }
 
-/* ---------- Embed de Instagram: cargar solo al llegar a la sección ---------- */
-function initInstagramEmbed() {
-  const target = document.getElementById("ig-embed");
-  if (!target) return;
-  const load = () => {
-    if (document.getElementById("ig-embed-script")) return;
-    const s = document.createElement("script");
-    s.id = "ig-embed-script";
-    s.async = true;
-    s.src = "https://www.instagram.com/embed.js";
-    document.body.appendChild(s);
-    // Si el script no carga (Instagram caído/bloqueado), el blockquote
-    // conserva el fallback: miniatura + "Ver vídeo en Instagram".
-  };
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          load();
-          io.disconnect();
-        }
-      },
-      { rootMargin: "400px" }
-    );
-    io.observe(target);
-  } else {
-    load();
-  }
+/* ---------- Escena 3D del hero: carga diferida tras el primer pintado ---------- */
+function initHero3DLazy() {
+  if (prefersReducedMotion) return;
+  // El 3D solo aporta en escritorio con ratón (su interacción es el parallax
+  // del cursor). En móvil/táctil lo omitimos: ahorra batería, datos (~120 kB)
+  // y protege la puntuación de rendimiento móvil.
+  const isDesktop = window.matchMedia("(hover: hover) and (min-width: 1024px)").matches;
+  if (!isDesktop) return;
+  const load = () =>
+    import("./effects/hero-3d.js")
+      .then((m) => m.initHero3D())
+      .catch(() => {}); // sin 3D si falla la carga: la web sigue funcionando
+  if ("requestIdleCallback" in window) requestIdleCallback(load, { timeout: 2500 });
+  else setTimeout(load, 900);
 }
 
 /* ---------- Año del footer ---------- */
@@ -128,4 +116,8 @@ document.getElementById("year").textContent = new Date().getFullYear();
 initI18n();
 initNav();
 initReveals();
-initInstagramEmbed();
+initTracingLine();
+initFloatingShapes();
+initMagneticButtons();
+initTiltCards();
+initHero3DLazy();
