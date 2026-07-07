@@ -6,6 +6,7 @@ import es from "./i18n/es.json";
 import ca from "./i18n/ca.json";
 import { initTracingLine } from "./effects/tracing-line.js";
 import { initFloatingShapes, initMagneticButtons, initTiltCards } from "./effects/ambient.js";
+import { initReveal3D } from "./effects/reveal-3d.js";
 
 // [PENDIENTE] Número real de WhatsApp del dueño (formato 34XXXXXXXXX, sin +)
 const WHATSAPP_NUMBER = "34XXXXXXXXX";
@@ -74,9 +75,9 @@ function initNav() {
   onScroll();
 }
 
-/* ---------- Micro-animaciones de aparición ---------- */
+/* ---------- Micro-animaciones de aparición (fade simple para texto) ---------- */
 function initReveals() {
-  const els = document.querySelectorAll(".reveal, .reveal-3d");
+  const els = document.querySelectorAll(".reveal");
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     els.forEach((el) => el.classList.add("visible"));
     return;
@@ -116,6 +117,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 initI18n();
 initNav();
 initReveals();
+initReveal3D();
 initTracingLine();
 initFloatingShapes();
 initMagneticButtons();

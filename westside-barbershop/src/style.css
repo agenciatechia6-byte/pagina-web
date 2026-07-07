@@ -68,20 +68,54 @@ body {
   transform: translateY(0);
 }
 
-/* Aparición con perspectiva 3D (tarjetas y galería) */
-.reveal-3d {
-  opacity: 0;
-  transform: perspective(900px) rotateX(14deg) translateY(46px);
-  transform-origin: center bottom;
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.8, 0.3, 1);
-}
-.reveal-3d.visible {
-  opacity: 1;
-  transform: perspective(900px) rotateX(0deg) translateY(0);
-}
 /* Cuando la tarjeta ya es visible, el tilt del cursor responde rápido */
 .tilt-ready:hover {
   transition: transform 0.12s ease-out;
+}
+
+/* ============ Reveal3D: transiciones 3D de entrada (reutilizable) ============
+   Config por data-attributes en el HTML (ver src/effects/reveal-3d.js).
+   Solo anima transform y opacity. Estado inicial = desplazado + girado;
+   estado final (.is-visible) = identidad. */
+[data-reveal] {
+  opacity: 0;
+  transform:
+    perspective(var(--r3d-perspective, 1000px))
+    translate3d(0, var(--r3d-y, 40px), var(--r3d-z, 0))
+    rotateX(var(--r3d-rx, 0deg))
+    rotateY(var(--r3d-ry, 0deg))
+    scale(var(--r3d-scale, 1));
+  transform-origin: center 60%;
+  transition:
+    opacity var(--r3d-dur, 600ms) var(--r3d-ease, cubic-bezier(0.22, 1, 0.36, 1)) var(--r3d-delay, 0ms),
+    transform var(--r3d-dur, 600ms) var(--r3d-ease, cubic-bezier(0.22, 1, 0.36, 1)) var(--r3d-delay, 0ms);
+}
+[data-reveal].is-animating {
+  will-change: transform, opacity;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform:
+    perspective(var(--r3d-perspective, 1000px))
+    translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1);
+}
+
+/* Presets */
+[data-reveal="rise"] { --r3d-y: 42px; }                                   /* sutil */
+[data-reveal="tilt"] { --r3d-y: 48px; --r3d-rx: 9deg; --r3d-perspective: 900px; }
+[data-reveal="flip"] {                                                    /* llamativa */
+  --r3d-y: 26px; --r3d-ry: 24deg; --r3d-perspective: 820px;
+  --r3d-ease: cubic-bezier(0.34, 1.56, 0.64, 1); /* overshoot = "resorte" */
+}
+[data-reveal="zoom"] { --r3d-y: 0px; --r3d-scale: 0.9; }
+
+/* Degradación en móvil / equipos modestos: sin giro 3D ni profundidad */
+.r3d-lite [data-reveal] {
+  --r3d-rx: 0deg;
+  --r3d-ry: 0deg;
+  --r3d-z: 0;
+  --r3d-y: 26px;
+  --r3d-perspective: 1200px;
 }
 
 /* ============ Línea de transiciones (tracing beam) ============ */
@@ -195,7 +229,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal, .reveal-3d { opacity: 1; transform: none; transition: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
   .btn-primary, .card-service, .gallery-img { transition: none; }
   .reel-frame { animation: none; }
   .float-shape::before { animation: none; }
