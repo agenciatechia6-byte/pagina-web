@@ -99,6 +99,8 @@
           <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
         </svg>
       </a>
+
+      <a data-wa href="#" class="btn-nav-cta" data-i18n="nav.book">Reserva</a>
     </div>
   </header>
 
@@ -107,12 +109,15 @@
     <!-- Capa de profundidad: la imagen vive en un plano trasero (translateZ)
          y se desplaza a distinta velocidad que el scroll (parallax). -->
     <div class="hero-depth">
-      <!-- Foto fija de la portada: el barbero en acción. (El slideshow queda
-           desactivado a petición del dueño; hero-slideshow.js no rota si solo
-           hay una diapositiva.) -->
+      <!-- Slideshow con crossfade: abre con el corte a tijera en móvil y con la
+           fachada en pantallas apaisadas (hero-slideshow.js). -->
       <div class="hero-slideshow" id="hero-slideshow">
-        <img src="/assets/img/hero/hero-02.webp" alt="Barbero de WestSide dando el acabado a un corte, Lleida"
+        <img src="/assets/img/hero/hero-01.webp" alt="Corte a tijera en WestSide Barbershop, Lleida"
              fetchpriority="high" class="hero-slide is-active" />
+        <img data-src="/assets/img/hero/hero-02.webp" alt="Barbero de WestSide trabajando" class="hero-slide" aria-hidden="true" />
+        <img data-src="/assets/img/hero/hero-03.webp" alt="Fachada de WestSide Barbershop de noche" class="hero-slide" aria-hidden="true" />
+        <img data-src="/assets/img/hero/hero-04.webp" alt="Productos y ambiente urbano del local" class="hero-slide" aria-hidden="true" />
+        <img data-src="/assets/img/hero/hero-05.webp" alt="Detalle de decoración: World Is Yours" class="hero-slide" aria-hidden="true" />
       </div>
     </div>
     <!-- Overlay oscuro degradado para legibilidad del titular (≈40-60% negro) -->
@@ -206,6 +211,16 @@
     <div class="reveal mt-10">
       <a data-wa class="btn-primary" href="#" data-i18n="services.cta">Reserva tu cita por WhatsApp</a>
     </div>
+
+    <!-- Ambiente del local: banda de detalles -->
+    <div class="mt-16 grid grid-cols-2 gap-3 md:gap-4">
+      <img src="/assets/img/hero/hero-04.webp" alt="Estantería de productos con skate grafiteado, interior de WestSide"
+           loading="lazy" width="1800" height="2396" data-reveal="rise"
+           class="h-52 w-full rounded-xl border border-line object-cover md:h-80" />
+      <img src="/assets/img/hero/hero-05.webp" alt="Figura decorativa bajo el lema The World Is Yours"
+           loading="lazy" width="1800" height="2396" data-reveal="rise" data-reveal-delay="90"
+           class="h-52 w-full rounded-xl border border-line object-cover md:h-80" />
+    </div>
   </section>
 
   <!-- ================= NOSOTROS ================= -->
@@ -227,8 +242,8 @@
               </a>
             </div>
           </div>
-          <!-- Detalle de oficio: corte a tijera -->
-          <img src="/assets/img/hero/hero-01.webp" alt="Corte a tijera en primer plano, WestSide Barbershop"
+          <!-- El equipo en acción -->
+          <img src="/assets/img/hero/hero-02.webp" alt="Barbero de WestSide dando el acabado a un corte"
                loading="lazy" width="1800" height="2396" data-reveal="tilt"
                class="hidden rounded-2xl border border-line object-cover shadow-[0_24px_70px_rgba(0,0,0,0.55)] lg:block" />
         </div>
@@ -332,6 +347,7 @@
       <div>
         <p class="font-display text-2xl tracking-tight">WESTSIDE</p>
         <p class="mt-2 text-sm text-paper/50">Carrer dels Comtes d'Urgell, 8 · 25004 Lleida</p>
+        <p class="mt-1 text-sm text-paper/50"><span data-i18n="where.hours">Lunes a sábado · 10:00 – 20:30</span> · Tel. 873 431 553</p>
       </div>
       <div class="flex items-center gap-6 text-sm">
         <a data-wa class="min-h-11 content-center text-paper/70 transition-colors hover:text-paper" href="#">WhatsApp</a>
@@ -352,7 +368,7 @@
 
   <!-- Botón flotante de WhatsApp -->
   <a data-wa href="#" aria-label="Reservar por WhatsApp"
-     class="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-paper text-ink shadow-[0_8px_30px_rgba(0,0,0,0.6)] transition-transform hover:scale-105">
+     class="wa-float fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-paper text-ink shadow-[0_8px_30px_rgba(0,0,0,0.6)] transition-transform hover:scale-105">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M12 2a9.9 9.9 0 0 0-8.5 15.1L2 22l5-1.4A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8Zm-3.1 4c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.4-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-2.9c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.1-.5l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5Z"/>
     </svg>

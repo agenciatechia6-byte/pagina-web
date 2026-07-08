@@ -31,6 +31,44 @@ body {
   border-radius: 2px;
 }
 
+/* Selección de texto y scrollbar a juego con la marca */
+::selection {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* CTA compacto del nav (solo escritorio) */
+.btn-nav-cta {
+  @apply hidden min-h-10 items-center rounded-full bg-paper px-5 text-xs font-semibold uppercase tracking-wide text-ink transition-transform duration-200 hover:scale-105 md:inline-flex;
+}
+
+/* Pulso sutil del botón flotante de WhatsApp */
+.wa-float::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid rgba(250, 250, 250, 0.45);
+  animation: waPing 3.2s ease-out infinite;
+}
+@keyframes waPing {
+  0%, 55% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
 /* ============ Botones (táctiles ≥44px) ============ */
 .btn-primary {
   @apply inline-flex min-h-12 items-center justify-center rounded-full bg-paper px-7 text-sm font-semibold uppercase tracking-wide text-ink transition-transform duration-200 hover:scale-[1.03] active:scale-95;
@@ -328,4 +366,5 @@ body {
   .reel-frame { animation: none; }
   .float-shape::before { animation: none; }
   .tl-end.active { animation: none; opacity: 0.7; }
+  .wa-float::after { animation: none; opacity: 0; }
 }
