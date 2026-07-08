@@ -67,7 +67,7 @@
   }
   </script>
 
-  <script type="module" crossorigin src="./assets/index-DFpoqfX2.js"></script>
+  <script type="module" crossorigin src="./assets/index-TgwLhyHQ.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-BfHrjjGa.css">
 </head>
 
@@ -108,16 +108,12 @@
     <!-- Capa de profundidad: la imagen vive en un plano trasero (translateZ)
          y se desplaza a distinta velocidad que el scroll (parallax). -->
     <div class="hero-depth">
-      <!-- Slideshow con crossfade: las fotos reales van en /public/assets/img/hero/
-           (hero-01..05.webp). La primera carga eager (es el LCP); el resto las
-           va cargando el JS justo antes de mostrarlas. -->
+      <!-- Foto fija de la portada: el barbero en acción. (El slideshow queda
+           desactivado a petición del dueño; hero-slideshow.js no rota si solo
+           hay una diapositiva.) -->
       <div class="hero-slideshow" id="hero-slideshow">
-        <img src="./assets/img/hero/hero-01.webp" alt="Corte a tijera en WestSide Barbershop, Lleida"
+        <img src="./assets/img/hero/hero-02.webp" alt="Barbero de WestSide dando el acabado a un corte, Lleida"
              fetchpriority="high" class="hero-slide is-active" />
-        <img data-src="/assets/img/hero/hero-02.webp" alt="Barbero de WestSide trabajando" class="hero-slide" aria-hidden="true" />
-        <img data-src="/assets/img/hero/hero-03.webp" alt="Fachada de WestSide Barbershop de noche" class="hero-slide" aria-hidden="true" />
-        <img data-src="/assets/img/hero/hero-04.webp" alt="Productos y ambiente urbano del local" class="hero-slide" aria-hidden="true" />
-        <img data-src="/assets/img/hero/hero-05.webp" alt="Detalle de decoración: World Is Yours" class="hero-slide" aria-hidden="true" />
       </div>
     </div>
     <!-- Overlay oscuro degradado para legibilidad del titular (≈40-60% negro) -->
@@ -232,8 +228,8 @@
               </a>
             </div>
           </div>
-          <!-- El equipo en acción (reutiliza la foto del hero: misma caché) -->
-          <img src="./assets/img/hero/hero-02.webp" alt="Barbero de WestSide dando el acabado a un corte"
+          <!-- Detalle de oficio: corte a tijera -->
+          <img src="./assets/img/hero/hero-01.webp" alt="Corte a tijera en primer plano, WestSide Barbershop"
                loading="lazy" width="1800" height="2396" data-reveal="tilt"
                class="hidden rounded-2xl border border-line object-cover shadow-[0_24px_70px_rgba(0,0,0,0.55)] lg:block" />
         </div>

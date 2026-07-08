@@ -20,6 +20,7 @@ const CONFIG = {
   wordLift: 14, //          px que sube cada palabra al aparecer
   wordStaggerMs: 42, //     desfase entre palabras en el fallback móvil
   titleLift: 40, //         px que sube el título del hero al desvanecerse
+  titleFade: false, //      desactivado a petición del dueño: el titular no se desvanece con el scroll
 };
 /* ─────────────────────────────────────────────────────────── */
 
@@ -179,7 +180,7 @@ export function initAppleScroll() {
       if (depth && window.scrollY < hero.offsetHeight) {
         depth.style.transform = `translate3d(0, ${(window.scrollY * pFactor).toFixed(1)}px, 0)`;
       }
-      titleFrame(); // memoizado: no escribe estilos si el progreso no cambió
+      if (CONFIG.titleFade) titleFrame(); // memoizado: no escribe estilos si el progreso no cambió
       revealClipsFrame();
       if (pinned) stickyFrame();
     });
