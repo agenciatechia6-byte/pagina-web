@@ -62,8 +62,8 @@
   </script>
   <!-- [PENDIENTE] Añadir "openingHoursSpecification" al JSON-LD cuando el dueño confirme horarios -->
 
-  <script type="module" crossorigin src="./assets/index-Tma2Zjuz.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DMxD7f8S.css">
+  <script type="module" crossorigin src="./assets/index-BUCs-caq.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DFMcejma.css">
 </head>
 
 <body class="bg-ink text-paper font-body antialiased">
@@ -103,11 +103,20 @@
     <!-- Capa de profundidad: la imagen vive en un plano trasero (translateZ)
          y se desplaza a distinta velocidad que el scroll (parallax). -->
     <div class="hero-depth">
-      <!-- [FOTO: hero — sustituir /public/img/hero.webp por foto real del local o de un corte] -->
-      <img src="./img/hero.webp" alt="Interior de WestSide Barbershop en Lleida" fetchpriority="high"
-           class="h-full w-full object-cover" />
+      <!-- Slideshow con crossfade: las fotos reales van en /public/assets/img/hero/
+           (hero-01..05.webp). La primera carga eager (es el LCP); el resto las
+           va cargando el JS justo antes de mostrarlas. -->
+      <div class="hero-slideshow" id="hero-slideshow">
+        <img src="./assets/img/hero/hero-01.webp" alt="Corte a tijera en WestSide Barbershop, Lleida"
+             fetchpriority="high" class="hero-slide is-active" />
+        <img data-src="/assets/img/hero/hero-02.webp" alt="Barbero de WestSide trabajando" class="hero-slide" aria-hidden="true" />
+        <img data-src="/assets/img/hero/hero-03.webp" alt="Fachada de WestSide Barbershop de noche" class="hero-slide" aria-hidden="true" />
+        <img data-src="/assets/img/hero/hero-04.webp" alt="Productos y ambiente urbano del local" class="hero-slide" aria-hidden="true" />
+        <img data-src="/assets/img/hero/hero-05.webp" alt="Detalle de decoración: World Is Yours" class="hero-slide" aria-hidden="true" />
+      </div>
     </div>
-    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" aria-hidden="true"></div>
+    <!-- Overlay oscuro degradado para legibilidad del titular (≈40-60% negro) -->
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/40" aria-hidden="true"></div>
     <div class="grain absolute inset-0" aria-hidden="true"></div>
 
     <div class="relative z-10 mx-auto w-full max-w-[1200px] px-5 pb-16 pt-28 lg:pt-32">

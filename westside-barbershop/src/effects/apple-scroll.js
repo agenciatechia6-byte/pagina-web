@@ -19,6 +19,7 @@ const CONFIG = {
   stickyMinWidth: 1024, //  ancho mínimo para fijar la sección
   wordLift: 14, //          px que sube cada palabra al aparecer
   wordStaggerMs: 42, //     desfase entre palabras en el fallback móvil
+  titleLift: 40, //         px que sube el título del hero al desvanecerse
 };
 /* ─────────────────────────────────────────────────────────── */
 
@@ -119,11 +120,32 @@ export function initAppleScroll() {
     }, { threshold: 0.4 }).observe(cta);
   }
 
-  /* ---------- driver único de scroll (parallax + sticky) ---------- */
+  /* ---------- driver único de scroll (parallax + sticky + fade título) ---------- */
   const hero = document.getElementById("hero");
   const depth = hero?.querySelector(".hero-depth");
+  const heroTitle = hero?.querySelector("h1");
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const pFactor = isMobile ? CONFIG.parallaxMobile : CONFIG.parallaxDesktop;
+
+  /* Título del hero desvaneciéndose con el scroll (estilo apple.com):
+     opacity 1→0, translateY 0→-40px y scale 1→0.95, totalmente desvanecido
+     cuando la primera sección de contenido llega arriba del viewport. */
+  let titleFading = false;
+  let lastTitleF = -1;
+  function titleFrame() {
+    if (!heroTitle) return;
+    const f = clamp01(window.scrollY / Math.max(hero.offsetHeight - 80, 1));
+    if (f === lastTitleF) return; // sin cambios: no tocar estilos
+    lastTitleF = f;
+    const eased = f * (2 - f); // easeOutQuad: progresivo, sin salto
+    const active = f > 0 && f < 1;
+    if (active !== titleFading) {
+      titleFading = active;
+      heroTitle.style.willChange = active ? "transform, opacity" : "";
+    }
+    heroTitle.style.opacity = (1 - eased).toFixed(3);
+    heroTitle.style.transform = `translateY(${(-CONFIG.titleLift * eased).toFixed(1)}px) scale(${(1 - 0.05 * eased).toFixed(3)})`;
+  }
 
   function stickyFrame() {
     const rect = scene.getBoundingClientRect();
@@ -157,6 +179,7 @@ export function initAppleScroll() {
       if (depth && window.scrollY < hero.offsetHeight) {
         depth.style.transform = `translate3d(0, ${(window.scrollY * pFactor).toFixed(1)}px, 0)`;
       }
+      titleFrame(); // memoizado: no escribe estilos si el progreso no cambió
       revealClipsFrame();
       if (pinned) stickyFrame();
     });

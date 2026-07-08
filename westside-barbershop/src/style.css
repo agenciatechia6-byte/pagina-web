@@ -228,8 +228,24 @@ body {
   transform-style: preserve-3d;
   will-change: transform; /* se anima durante toda la vida del hero */
 }
-.hero-depth img {
+/* El plano trasero: el slideshow entero vive en profundidad */
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
   transform: translateZ(-120px) scale(1.16);
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  /* Crossfade suave entre fotos (1.5s, solo opacity) */
+  transition: opacity 1.5s var(--ease-apple);
+}
+.hero-slide.is-active {
+  opacity: 1;
 }
 
 /* ============ AppleScroll: escena sticky (#nosotros) ============ */

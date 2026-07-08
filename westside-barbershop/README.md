@@ -19,7 +19,7 @@ Todas las fotos están en `public/img/`. Sustituye el archivo **manteniendo el m
 
 | Archivo | Qué es | Formato recomendado |
 |---|---|---|
-| `hero.webp` | Foto de fondo del hero (local o corte) | WebP vertical, ~1440×1800 |
+| `assets/img/hero/hero-01..05.webp` | Slideshow del hero (5 fotos con crossfade) | WebP, ~1600px lado mayor, calidad 70 |
 | `corte-01.webp` … `corte-08.webp` | Galería de trabajos | WebP 4:5, ~800×1000 |
 | `og.png` | Imagen al compartir el link en redes | PNG 1200×630 |
 | `favicon.svg` / `apple-touch-icon.png` | Iconos (W) — sustituir por logo cuando exista | — |
