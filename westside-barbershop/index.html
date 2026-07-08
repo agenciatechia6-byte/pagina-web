@@ -53,14 +53,19 @@
       "addressRegion": "Catalunya",
       "addressCountry": "ES"
     },
-    "telephone": "+34XXXXXXXXX",
+    "telephone": "+34873431553",
     "priceRange": "€",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "20:30"
+    }],
     "image": "https://westsidebarbershop.es/img/og.png",
     "url": "https://westsidebarbershop.es/",
     "sameAs": ["https://www.instagram.com/westside_barbershop.es/"]
   }
   </script>
-  <!-- [PENDIENTE] Añadir "openingHoursSpecification" al JSON-LD cuando el dueño confirme horarios -->
 
   <script type="module" src="/src/main.js"></script>
 </head>
@@ -294,8 +299,7 @@
         <p class="reveal text-lg">Carrer dels Comtes d'Urgell, 8<br />25004 Lleida</p>
 
         <h3 class="reveal mt-8 text-sm font-medium uppercase tracking-widest text-paper/60" data-i18n="where.hoursTitle">Horario</h3>
-        <!-- [PENDIENTE] Horarios reales del dueño -->
-        <p class="reveal mt-2 text-paper/80" data-i18n="where.hours">Consulta el horario por WhatsApp o Instagram.</p>
+        <p class="reveal mt-2 text-paper/80" data-i18n="where.hours">Lunes a sábado · 10:00 – 20:30</p>
 
         <div class="reveal mt-8 flex flex-col gap-3 sm:flex-row">
           <a class="btn-primary" target="_blank" rel="noopener"

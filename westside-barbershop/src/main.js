@@ -10,8 +10,7 @@ import { initReveal3D } from "./effects/reveal-3d.js";
 import { initAppleScroll } from "./effects/apple-scroll.js";
 import { initHeroSlideshow } from "./effects/hero-slideshow.js";
 
-// [PENDIENTE] Número real de WhatsApp del dueño (formato 34XXXXXXXXX, sin +)
-const WHATSAPP_NUMBER = "34XXXXXXXXX";
+const WHATSAPP_NUMBER = "34873431553";
 
 const DICTS = { es, ca };
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

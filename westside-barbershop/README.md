@@ -56,9 +56,9 @@ El idioma por defecto es castellano; el catalán se activa con el selector
 
 ## ⏳ Lista de [PENDIENTE] para el dueño
 
-- [ ] **Teléfono/WhatsApp**: número real → cambiar `WHATSAPP_NUMBER` en `src/main.js` (formato `34XXXXXXXXX`) y el `telephone` del JSON-LD en `index.html`.
-- [ ] **Horarios**: → textos `where.hours` en `src/i18n/es.json` y `ca.json`, y añadir `openingHoursSpecification` al JSON-LD.
-- [ ] **Fotos elegidas**: 1 hero + 8 cortes de su Instagram (ver tabla de arriba).
+- [x] **Teléfono/WhatsApp**: 873 431 553 (configurado en `src/main.js` y JSON-LD).
+- [x] **Horarios**: lunes a sábado 10:00–20:30 (textos ES/CA y JSON-LD).
+- [x] **Fotos del hero**: las 5 reales integradas. **Galería**: 4 de 8 cortes reales; faltan 4 (IMG_8614/8616/8620/8623, pendientes de descarga de Drive).
 - [ ] **Reseñas reales de Google**: 3-4 → textos `reviews.r1..r3` en los JSON + enlazar el badge al perfil real de Google Business.
 - [ ] **Logo**: archivo → sustituir el texto WESTSIDE del nav y los favicons.
 - [ ] **Dominio**: cuando exista, actualizar OG/JSON-LD (ver arriba).
