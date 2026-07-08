@@ -31,6 +31,19 @@ export function initHeroSlideshow() {
     }
   };
 
+  // Dirección de arte por orientación: en pantallas apaisadas (PC) la portada
+  // abre con la única foto horizontal (la fachada, hero-03), que llena el
+  // ancho sin recorte agresivo. En móvil (vertical) abre el corte a tijera.
+  if (window.matchMedia("(orientation: landscape) and (min-width: 1024px)").matches) {
+    const idx = slides.findIndex((s) => (s.dataset.src || s.src).includes("hero-03"));
+    if (idx > 0) {
+      ensureLoaded(slides[idx]);
+      slides[idx].classList.add("is-active");
+      slides[0].classList.remove("is-active");
+      current = idx;
+    }
+  }
+
   function next() {
     const prev = current;
     current = (current + 1) % slides.length;
