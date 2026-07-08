@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Barbería urbana en Lleida. Corte hombre 12 €, corte + barba 18 €, diseños y cejas. Asesoramiento de imagen gratuito. Reserva por WhatsApp."
+    "description": "Barbería en Lleida. El corte que te define: fades de precisión, diseños freestyle, barba y cejas. Asesoría de imagen gratuita. Reserva tu cita por WhatsApp."
   },
   "nav": {
     "services": "Servicios",
@@ -10,35 +10,39 @@
     "where": "Dónde"
   },
   "hero": {
-    "title": "Tu mejor versión empieza en la silla",
-    "subtitle": "Barbería en Lleida · Asesoramiento de imagen gratuito",
-    "ctaPrimary": "Reserva por WhatsApp",
-    "ctaSecondary": "Ver trabajos en Instagram",
+    "title": "El corte que te define",
+    "subtitle": "Barbería en Lleida · Reserva tu cita en un minuto por WhatsApp",
+    "ctaPrimary": "Reserva tu cita",
+    "ctaSecondary": "Descubre tu estilo",
     "reelPoster": "Ver el reel",
     "reelFallback": "¿No se ve el vídeo? Ábrelo en Instagram"
   },
   "services": {
     "title": "Servicios",
-    "lead": "Precios claros. Sin sorpresas. Pagas al salir con el corte que querías.",
-    "s1": "Corte hombre",
-    "s2": "Corte + barba",
-    "s3": "Corte con diseño",
-    "s4": "Corte + cejas",
-    "s5": "Asesoramiento de imagen",
+    "lead": "Precios claros, sin sorpresas. Pagas por oficio, y se nota al salir.",
+    "s1": "El Westside",
+    "d1": "Fade de precisión, línea limpia y acabado al detalle.",
+    "s2": "Corte + Barba",
+    "d2": "El combo completo: corte a medida y barba perfilada a navaja.",
+    "s3": "Freestyle",
+    "d3": "Líneas y diseños a máquina, para un corte que habla por ti.",
+    "s4": "Look Total",
+    "d4": "Tu corte rematado con cejas perfiladas. Nada queda al azar.",
+    "s5": "Asesoría de Imagen",
     "free": "Gratis",
-    "freeNote": "Te decimos qué corte te favorece antes de tocar la máquina.",
-    "cta": "Reserva por WhatsApp"
+    "freeNote": "Leemos tu rostro, tu pelo y tu rollo antes de tocar la máquina.",
+    "cta": "Reserva tu cita por WhatsApp"
   },
   "about": {
     "title": "Nosotros",
-    "line1": "Cortamos como se corta ahora, no como se cortaba hace diez años.",
-    "line2": "Fades, diseños, barba y cejas — con la música puesta y sin prisas. Entras a por un corte y sales con tu mejor versión.",
-    "line3": "Si no lo tienes claro, te asesoramos gratis: miramos tu rostro, tu pelo y tu rollo, y te decimos qué te favorece.",
+    "line1": "El corte es oficio, no trámite.",
+    "line2": "Cada fade al milímetro y cada línea a pulso: estilo urbano trabajado con calma y con la música puesta.",
+    "line3": "Westside es el punto de encuentro de Lleida para los que cuidan su imagen. Entra con una idea, sal con tu sello.",
     "cta": "Síguenos en Instagram"
   },
   "work": {
     "title": "Trabajos",
-    "lead": "Cortes reales, de clientes reales. Lo que ves es lo que hay.",
+    "lead": "Lo que sale de nuestras sillas. Cortes reales, de clientes reales.",
     "cta": "Más en @westside_barbershop.es"
   },
   "reviews": {

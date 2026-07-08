@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Barberia urbana a Lleida. Tall home 12 €, tall + barba 18 €, dissenys i celles. Assessorament d'imatge gratuït. Reserva per WhatsApp."
+    "description": "Barberia a Lleida. El tall que et defineix: fades de precisió, dissenys freestyle, barba i celles. Assessoria d'imatge gratuïta. Reserva la teva cita per WhatsApp."
   },
   "nav": {
     "services": "Serveis",
@@ -10,35 +10,39 @@
     "where": "On som"
   },
   "hero": {
-    "title": "La teva millor versió comença a la cadira",
-    "subtitle": "Barberia a Lleida · Assessorament d'imatge gratuït",
-    "ctaPrimary": "Reserva per WhatsApp",
-    "ctaSecondary": "Veure feines a Instagram",
+    "title": "El tall que et defineix",
+    "subtitle": "Barberia a Lleida · Reserva la teva cita en un minut per WhatsApp",
+    "ctaPrimary": "Reserva la teva cita",
+    "ctaSecondary": "Descobreix el teu estil",
     "reelPoster": "Veure el reel",
     "reelFallback": "No es veu el vídeo? Obre'l a Instagram"
   },
   "services": {
     "title": "Serveis",
-    "lead": "Preus clars. Sense sorpreses. Pagues en sortir amb el tall que volies.",
-    "s1": "Tall home",
-    "s2": "Tall + barba",
-    "s3": "Tall amb disseny",
-    "s4": "Tall + celles",
-    "s5": "Assessorament d'imatge",
+    "lead": "Preus clars, sense sorpreses. Pagues per ofici, i es nota en sortir.",
+    "s1": "El Westside",
+    "d1": "Fade de precisió, línia neta i acabat al detall.",
+    "s2": "Tall + Barba",
+    "d2": "El combo complet: tall a mida i barba perfilada a navalla.",
+    "s3": "Freestyle",
+    "d3": "Línies i dissenys a màquina, per a un tall que parla per tu.",
+    "s4": "Look Total",
+    "d4": "El teu tall rematat amb celles perfilades. Res no queda a l'atzar.",
+    "s5": "Assessoria d'Imatge",
     "free": "Gratis",
-    "freeNote": "Et diem quin tall t'afavoreix abans de tocar la màquina.",
-    "cta": "Reserva per WhatsApp"
+    "freeNote": "Llegim el teu rostre, el teu cabell i el teu rotllo abans de tocar la màquina.",
+    "cta": "Reserva la teva cita per WhatsApp"
   },
   "about": {
     "title": "Nosaltres",
-    "line1": "Tallem com es talla ara, no com es tallava fa deu anys.",
-    "line2": "Fades, dissenys, barba i celles — amb la música posada i sense presses. Entres a per un tall i surts amb la teva millor versió.",
-    "line3": "Si no ho tens clar, t'assessorem gratis: mirem el teu rostre, el teu cabell i el teu rotllo, i et diem què t'afavoreix.",
+    "line1": "El tall és ofici, no tràmit.",
+    "line2": "Cada fade al mil·límetre i cada línia a pols: estil urbà treballat amb calma i amb la música posada.",
+    "line3": "Westside és el punt de trobada de Lleida per als que cuiden la seva imatge. Entra amb una idea, surt amb el teu segell.",
     "cta": "Segueix-nos a Instagram"
   },
   "work": {
     "title": "Feines",
-    "lead": "Talls reals, de clients reals. El que veus és el que hi ha.",
+    "lead": "El que surt de les nostres cadires. Talls reals, de clients reals.",
     "cta": "Més a @westside_barbershop.es"
   },
   "reviews": {
