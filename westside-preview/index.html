@@ -67,8 +67,8 @@
   }
   </script>
 
-  <script type="module" crossorigin src="./assets/index-CaIIP8s7.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DFMcejma.css">
+  <script type="module" crossorigin src="./assets/index-DFpoqfX2.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BfHrjjGa.css">
 </head>
 
 <body class="bg-ink text-paper font-body antialiased">
@@ -220,14 +220,22 @@
   <section id="nosotros" class="scroll-mt-20 border-y border-line bg-surface">
     <div class="sticky-scene mx-auto max-w-[1200px] px-5 py-24" id="nosotros-scene">
       <div class="sticky-stage">
-        <h2 class="font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-clip data-i18n="about.title">Nosotros</h2>
-        <p class="ws-line mt-6 max-w-2xl text-lg text-paper/80" data-words data-i18n="about.line1">El corte es oficio, no trámite.</p>
-        <p class="ws-line mt-4 max-w-2xl text-paper/60" data-words data-i18n="about.line2">Cada fade al milímetro y cada línea a pulso: estilo urbano trabajado con calma y con la música puesta.</p>
-        <p class="ws-line mt-4 max-w-2xl text-paper/60" data-words data-i18n="about.line3">Westside es el punto de encuentro de Lleida para los que cuidan su imagen. Entra con una idea, sal con tu sello.</p>
-        <div class="ws-cta mt-8">
-          <a class="btn-outline" href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener" data-i18n="about.cta">
-            Síguenos en Instagram
-          </a>
+        <div class="grid items-center gap-10 lg:grid-cols-[1fr_360px]">
+          <div>
+            <h2 class="font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-clip data-i18n="about.title">Nosotros</h2>
+            <p class="ws-line mt-6 max-w-2xl text-lg text-paper/80" data-words data-i18n="about.line1">El corte es oficio, no trámite.</p>
+            <p class="ws-line mt-4 max-w-2xl text-paper/60" data-words data-i18n="about.line2">Cada fade al milímetro y cada línea a pulso: estilo urbano trabajado con calma y con la música puesta.</p>
+            <p class="ws-line mt-4 max-w-2xl text-paper/60" data-words data-i18n="about.line3">Westside es el punto de encuentro de Lleida para los que cuidan su imagen. Entra con una idea, sal con tu sello.</p>
+            <div class="ws-cta mt-8">
+              <a class="btn-outline" href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener" data-i18n="about.cta">
+                Síguenos en Instagram
+              </a>
+            </div>
+          </div>
+          <!-- El equipo en acción (reutiliza la foto del hero: misma caché) -->
+          <img src="./assets/img/hero/hero-02.webp" alt="Barbero de WestSide dando el acabado a un corte"
+               loading="lazy" width="1800" height="2396" data-reveal="tilt"
+               class="hidden rounded-2xl border border-line object-cover shadow-[0_24px_70px_rgba(0,0,0,0.55)] lg:block" />
         </div>
       </div>
     </div>
@@ -245,10 +253,8 @@
       <img class="gallery-img" data-reveal="rise" loading="lazy" src="./img/corte-02.webp" width="800" height="1000" alt="Mullet con taper fade y textura, corte real de WestSide" />
       <img class="gallery-img" data-reveal="rise" loading="lazy" src="./img/corte-03.webp" width="800" height="1000" alt="Diseño freestyle a máquina en el lateral, WestSide Lleida" />
       <img class="gallery-img" data-reveal="rise" loading="lazy" src="./img/corte-04.webp" width="800" height="1000" alt="Corte con diseño freestyle y low fade, WestSide" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="./img/corte-05.webp" width="800" height="1000" alt="Corte clásico moderno con acabado pulido" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="./img/corte-06.webp" width="800" height="1000" alt="Fade alto con línea marcada" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="./img/corte-07.webp" width="800" height="1000" alt="Corte rizado con definición" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="./img/corte-08.webp" width="800" height="1000" alt="Corte y cejas perfiladas" />
+      <!-- [PENDIENTE] 4 cortes más (IMG_8614/8616/8620/8623): añadir aquí como
+           corte-05..08.webp cuando se puedan descargar de Drive -->
     </div>
 
     <div class="reveal mt-10">
@@ -308,6 +314,11 @@
              data-i18n="where.directions">Cómo llegar</a>
           <a data-wa class="btn-outline" href="#" data-i18n="where.cta">Escríbenos por WhatsApp</a>
         </div>
+
+        <!-- La fachada real: así se reconoce el local desde la calle -->
+        <img src="./assets/img/hero/hero-03.webp" alt="Fachada de WestSide Barbershop de noche, Carrer dels Comtes d'Urgell 8"
+             loading="lazy" width="1920" height="1442" data-reveal="rise"
+             class="mt-10 w-full rounded-xl border border-line object-cover" />
       </div>
 
       <div class="reveal overflow-hidden rounded-xl border border-line">
