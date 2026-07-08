@@ -10,7 +10,9 @@ import { initReveal3D } from "./effects/reveal-3d.js";
 import { initAppleScroll } from "./effects/apple-scroll.js";
 import { initHeroSlideshow } from "./effects/hero-slideshow.js";
 
-const WHATSAPP_NUMBER = "34873431553";
+// WhatsApp del negocio (móvil). El fijo (873 431 553) va en el JSON-LD como
+// teléfono público de la ficha.
+const WHATSAPP_NUMBER = "34641985591";
 
 const DICTS = { es, ca };
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
