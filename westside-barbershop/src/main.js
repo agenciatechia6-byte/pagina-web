@@ -7,6 +7,7 @@ import ca from "./i18n/ca.json";
 import { initTracingLine } from "./effects/tracing-line.js";
 import { initFloatingShapes, initMagneticButtons, initTiltCards } from "./effects/ambient.js";
 import { initReveal3D } from "./effects/reveal-3d.js";
+import { initAppleScroll } from "./effects/apple-scroll.js";
 
 // [PENDIENTE] Número real de WhatsApp del dueño (formato 34XXXXXXXXX, sin +)
 const WHATSAPP_NUMBER = "34XXXXXXXXX";
@@ -50,6 +51,10 @@ function applyLang(lang) {
     btn.setAttribute("aria-pressed", String(active));
     btn.classList.toggle("text-paper/50", !active);
   });
+
+  // Avisar a los efectos que re-parten texto (palabra a palabra) de que el
+  // contenido acaba de cambiar de idioma.
+  window.dispatchEvent(new CustomEvent("westside:i18n", { detail: { lang } }));
 }
 
 function initI18n() {
@@ -118,6 +123,7 @@ initI18n();
 initNav();
 initReveals();
 initReveal3D();
+initAppleScroll();
 initTracingLine();
 initFloatingShapes();
 initMagneticButtons();

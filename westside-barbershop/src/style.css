@@ -12,6 +12,11 @@
   --font-body: "Inter", system-ui, sans-serif;
 }
 
+:root {
+  /* Curva de entrada estilo Apple: arranque contenido, aterrizaje suave */
+  --ease-apple: cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
 /* Red de seguridad contra desbordamiento horizontal (formas flotantes en
    rotación, línea SVG). clip no crea contenedor de scroll ni rompe el nav fijo. */
 html,
@@ -61,17 +66,13 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.6s var(--ease-apple), transform 0.6s var(--ease-apple);
 }
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Cuando la tarjeta ya es visible, el tilt del cursor responde rápido */
-.tilt-ready:hover {
-  transition: transform 0.12s ease-out;
-}
 
 /* ============ Reveal3D: transiciones 3D de entrada (reutilizable) ============
    Config por data-attributes en el HTML (ver src/effects/reveal-3d.js).
@@ -87,8 +88,8 @@ body {
     scale(var(--r3d-scale, 1));
   transform-origin: center 60%;
   transition:
-    opacity var(--r3d-dur, 600ms) var(--r3d-ease, cubic-bezier(0.22, 1, 0.36, 1)) var(--r3d-delay, 0ms),
-    transform var(--r3d-dur, 600ms) var(--r3d-ease, cubic-bezier(0.22, 1, 0.36, 1)) var(--r3d-delay, 0ms);
+    opacity var(--r3d-dur, 600ms) var(--r3d-ease, var(--ease-apple)) var(--r3d-delay, 0ms),
+    transform var(--r3d-dur, 600ms) var(--r3d-ease, var(--ease-apple)) var(--r3d-delay, 0ms);
 }
 [data-reveal].is-animating {
   will-change: transform, opacity;
@@ -211,6 +212,77 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* ============ AppleScroll: parallax 3D del hero ============
+   La imagen vive en un plano trasero real: perspective en la sección +
+   translateZ negativo en la imagen (compensado con scale). El JS solo
+   desplaza el wrapper con translate3d → composición pura en GPU. */
+.hero-parallax {
+  perspective: 1000px;
+}
+.hero-depth {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12%;
+  bottom: -12%;
+  transform-style: preserve-3d;
+  will-change: transform; /* se anima durante toda la vida del hero */
+}
+.hero-depth img {
+  transform: translateZ(-120px) scale(1.16);
+}
+
+/* ============ AppleScroll: escena sticky (#nosotros) ============ */
+.sticky-scene.pinned {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.sticky-scene.pinned .sticky-stage {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ============ AppleScroll: texto palabra a palabra ============ */
+.ws-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s var(--ease-apple, cubic-bezier(0.28, 0.11, 0.32, 1)),
+    transform 0.5s var(--ease-apple, cubic-bezier(0.28, 0.11, 0.32, 1));
+}
+.ws-word.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* En modo sticky el JS pinta opacity/transform por frame: sin transición
+   para que respondan 1:1 al scroll (como Apple). */
+.pinned .ws-word {
+  transition: none;
+}
+.ws-cta {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s var(--ease-apple, cubic-bezier(0.28, 0.11, 0.32, 1)),
+    transform 0.6s var(--ease-apple, cubic-bezier(0.28, 0.11, 0.32, 1));
+}
+.ws-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ AppleScroll: clip-path reveal de títulos ============ */
+[data-clip] {
+  clip-path: inset(-5% 100% -10% 0);
+  transition: clip-path 0.7s var(--ease-apple, cubic-bezier(0.28, 0.11, 0.32, 1));
+}
+[data-clip].is-visible {
+  clip-path: inset(-5% -2% -10% 0);
+}
+
 /* ============ Marco del reel en el hero ============ */
 .reel-frame {
   animation: reelFloat 7s ease-in-out infinite;
@@ -231,6 +303,11 @@ body {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  /* AppleScroll: fallback estático completo */
+  .hero-depth { will-change: auto; }
+  .hero-depth img { transform: none; }
+  .ws-word, .ws-cta { opacity: 1 !important; transform: none !important; transition: none !important; }
+  [data-clip] { clip-path: none !important; transition: none !important; }
   .btn-primary, .card-service, .gallery-img { transition: none; }
   .reel-frame { animation: none; }
   .float-shape::before { animation: none; }

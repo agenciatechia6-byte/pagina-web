@@ -80,20 +80,40 @@ export function initMagneticButtons() {
   });
 }
 
-/* Tarjetas con inclinación 3D al pasar el cursor */
+/* Tarjetas con inclinación 3D al pasar el cursor (desactivado en táctil).
+   Perspective 1000px; al salir, retorno con curva "spring" (overshoot). */
+const TILT = {
+  maxDeg: 6, //      intensidad de la inclinación
+  perspective: 1000,
+  springMs: 550, //  duración del retorno
+  spring: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+};
+
 export function initTiltCards() {
   if (prefersReducedMotion || !window.matchMedia("(hover: hover)").matches) return;
 
   document.querySelectorAll(".card-service, .gallery-img, .card-review").forEach((card) => {
-    card.classList.add("tilt-ready");
+    card.addEventListener("pointerenter", () => {
+      card.style.willChange = "transform"; // solo mientras se anima
+      card.style.transition = "transform 80ms linear"; // seguimiento ágil del cursor
+    });
     card.addEventListener("pointermove", (e) => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width - 0.5;
       const y = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `perspective(800px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) translateY(-3px)`;
+      card.style.transform = `perspective(${TILT.perspective}px) rotateX(${(-y * TILT.maxDeg).toFixed(2)}deg) rotateY(${(x * TILT.maxDeg).toFixed(2)}deg) translateY(-3px)`;
     });
     card.addEventListener("pointerleave", () => {
+      card.style.transition = `transform ${TILT.springMs}ms ${TILT.spring}`;
       card.style.transform = "";
+      // Retirar will-change al terminar el retorno
+      const done = (e) => {
+        if (e.propertyName !== "transform") return;
+        card.style.willChange = "";
+        card.style.transition = "";
+        card.removeEventListener("transitionend", done);
+      };
+      card.addEventListener("transitionend", done);
     });
   });
 }

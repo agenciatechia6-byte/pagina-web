@@ -98,10 +98,14 @@
   </header>
 
   <!-- ================= HERO ================= -->
-  <section id="hero" class="relative flex min-h-svh items-end overflow-hidden">
-    <!-- [FOTO: hero — sustituir /public/img/hero.webp por foto real del local o de un corte] -->
-    <img src="/img/hero.webp" alt="Interior de WestSide Barbershop en Lleida" fetchpriority="high"
-         class="absolute inset-0 h-full w-full object-cover" />
+  <section id="hero" class="hero-parallax relative flex min-h-svh items-end overflow-hidden">
+    <!-- Capa de profundidad: la imagen vive en un plano trasero (translateZ)
+         y se desplaza a distinta velocidad que el scroll (parallax). -->
+    <div class="hero-depth">
+      <!-- [FOTO: hero — sustituir /public/img/hero.webp por foto real del local o de un corte] -->
+      <img src="/img/hero.webp" alt="Interior de WestSide Barbershop en Lleida" fetchpriority="high"
+           class="h-full w-full object-cover" />
+    </div>
     <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" aria-hidden="true"></div>
     <div class="grain absolute inset-0" aria-hidden="true"></div>
 
@@ -157,7 +161,7 @@
 
   <!-- ================= SERVICIOS ================= -->
   <section id="servicios" class="mx-auto max-w-[1200px] scroll-mt-20 px-5 py-24">
-    <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="services.title">Servicios</h2>
+    <h2 class="font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-clip data-i18n="services.title">Servicios</h2>
     <p class="reveal mt-4 max-w-lg text-paper/60" data-i18n="services.lead">Precios claros. Sin sorpresas. Pagas al salir con el corte que querías.</p>
 
     <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger="70">
@@ -191,23 +195,28 @@
   </section>
 
   <!-- ================= NOSOTROS ================= -->
+  <!-- Escena sticky tipo Apple: en desktop la sección se queda fija mientras
+       las frases aparecen palabra a palabra al ritmo del scroll. En móvil y
+       con prefers-reduced-motion fluye como una sección normal. -->
   <section id="nosotros" class="scroll-mt-20 border-y border-line bg-surface">
-    <div class="mx-auto max-w-[1200px] px-5 py-24">
-      <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="about.title">Nosotros</h2>
-      <p class="reveal mt-6 max-w-2xl text-lg text-paper/80" data-i18n="about.line1">Cortamos como se corta ahora, no como se cortaba hace diez años.</p>
-      <p class="reveal mt-4 max-w-2xl text-paper/60" data-i18n="about.line2">Fades, diseños, barba y cejas — con la música puesta y sin prisas. Entras a por un corte y sales con tu mejor versión.</p>
-      <p class="reveal mt-4 max-w-2xl text-paper/60" data-i18n="about.line3">Si no lo tienes claro, te asesoramos gratis: miramos tu rostro, tu pelo y tu rollo, y te decimos qué te favorece.</p>
-      <div class="reveal mt-8">
-        <a class="btn-outline" href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener" data-i18n="about.cta">
-          Síguenos en Instagram
-        </a>
+    <div class="sticky-scene mx-auto max-w-[1200px] px-5 py-24" id="nosotros-scene">
+      <div class="sticky-stage">
+        <h2 class="font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-clip data-i18n="about.title">Nosotros</h2>
+        <p class="ws-line mt-6 max-w-2xl text-lg text-paper/80" data-words data-i18n="about.line1">Cortamos como se corta ahora, no como se cortaba hace diez años.</p>
+        <p class="ws-line mt-4 max-w-2xl text-paper/60" data-words data-i18n="about.line2">Fades, diseños, barba y cejas — con la música puesta y sin prisas. Entras a por un corte y sales con tu mejor versión.</p>
+        <p class="ws-line mt-4 max-w-2xl text-paper/60" data-words data-i18n="about.line3">Si no lo tienes claro, te asesoramos gratis: miramos tu rostro, tu pelo y tu rollo, y te decimos qué te favorece.</p>
+        <div class="ws-cta mt-8">
+          <a class="btn-outline" href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener" data-i18n="about.cta">
+            Síguenos en Instagram
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ================= TRABAJOS ================= -->
   <section id="trabajos" class="mx-auto max-w-[1200px] scroll-mt-20 px-5 py-24">
-    <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="work.title">Trabajos</h2>
+    <h2 class="font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-clip data-i18n="work.title">Trabajos</h2>
     <p class="reveal mt-4 max-w-lg text-paper/60" data-i18n="work.lead">Cortes reales, de clientes reales. Lo que ves es lo que hay.</p>
 
     <!-- Grid manual de fotos locales (sin API de Instagram: más rápido y fiable) -->
@@ -233,7 +242,7 @@
   <!-- ================= OPINIONES ================= -->
   <section id="opiniones" class="scroll-mt-20 border-y border-line bg-surface">
     <div class="mx-auto max-w-[1200px] px-5 py-24">
-      <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="reviews.title">Opiniones</h2>
+      <h2 class="font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-clip data-i18n="reviews.title">Opiniones</h2>
 
       <!-- [PENDIENTE] Badge: enlazar al perfil real de Google Business del dueño -->
       <a class="reveal mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface2 px-4 text-sm"
@@ -265,7 +274,7 @@
 
   <!-- ================= DÓNDE ESTAMOS ================= -->
   <section id="donde" class="mx-auto max-w-[1200px] scroll-mt-20 px-5 py-24">
-    <h2 class="reveal font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-i18n="where.title">Dónde estamos</h2>
+    <h2 class="font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-clip data-i18n="where.title">Dónde estamos</h2>
 
     <div class="mt-12 grid gap-10 lg:grid-cols-2">
       <div>
