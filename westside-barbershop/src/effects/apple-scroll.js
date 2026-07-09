@@ -14,11 +14,11 @@
    ── CONFIG ─────────────────────────────────────────────── */
 const CONFIG = {
   parallaxDesktop: 0.18, // proporción del scroll que se mueve la imagen
-  parallaxMobile: 0.07, //  ↳ en móvil, mucho menor (evita lag)
-  stickyLength: 1.6, //     alto extra de la escena sticky (× viewport)
-  stickyMinWidth: 1024, //  ancho mínimo para fijar la sección
+  parallaxMobile: 0.12, //  ↳ en móvil, algo menor (suave pero perceptible)
+  stickyLength: 1.6, //     alto extra de la escena sticky (× viewport, escritorio)
+  stickyLengthMobile: 1.1, // ↳ en móvil, recorrido más corto
   wordLift: 14, //          px que sube cada palabra al aparecer
-  wordStaggerMs: 42, //     desfase entre palabras en el fallback móvil
+  wordStaggerMs: 42, //     desfase entre palabras en el fallback
   titleLift: 40, //         px que sube el título del hero al desvanecerse
   titleFade: false, //      desactivado a petición del dueño: el titular no se desvanece con el scroll
 };
@@ -75,11 +75,9 @@ export function initAppleScroll() {
   /* ---------- estado compartido de la escena sticky ---------- */
   const scene = document.getElementById("nosotros-scene");
   const lines = [];
-  const pinned =
-    !reduce &&
-    scene &&
-    window.innerWidth >= CONFIG.stickyMinWidth &&
-    window.matchMedia("(min-height: 560px)").matches;
+  // La escena sticky también en móvil: es el efecto firma de la página.
+  // Solo se desactiva con reduced-motion o pantallas muy bajas.
+  const pinned = !reduce && scene && window.matchMedia("(min-height: 560px)").matches;
 
   document.querySelectorAll("[data-words]").forEach((el) => {
     const words = reduce ? null : splitWords(el);
@@ -92,7 +90,8 @@ export function initAppleScroll() {
     cta?.classList.add("is-visible");
   } else if (pinned) {
     scene.classList.add("pinned");
-    scene.style.height = `${window.innerHeight * (1 + CONFIG.stickyLength)}px`;
+    const length = window.innerWidth < 1024 ? CONFIG.stickyLengthMobile : CONFIG.stickyLength;
+    scene.style.height = `${window.innerHeight * (1 + length)}px`;
   } else {
     // Móvil/tablet: sin pin; cada línea revela sus palabras en cascada
     // al entrar en viewport (IntersectionObserver, barato).

@@ -32,9 +32,11 @@
 const DEFAULTS = {
   threshold: 0.15,
   rootMargin: "0px 0px -40px 0px",
-  // Se considera "equipo modesto" para degradar el 3D:
-  weakCores: 4, // núcleos lógicos <= este valor
-  weakMemory: 4, // GB de RAM (deviceMemory) <= este valor
+  // Se considera "equipo modesto" para degradar el 3D. Los móviles modernos
+  // mueven estas transiciones (solo transform/opacity) a 60 fps sin problema,
+  // así que solo degradamos hardware realmente justo.
+  weakCores: 3, // núcleos lógicos <= este valor
+  weakMemory: 2, // GB de RAM (deviceMemory) <= este valor
 };
 
 export function initReveal3D(userOpts = {}) {
@@ -45,9 +47,8 @@ export function initReveal3D(userOpts = {}) {
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // (5) Degradación: sin rotaciones 3D en móvil o hardware modesto.
+  // (5) Degradación solo en hardware modesto (los móviles actuales van sobrados).
   const weak =
-    window.matchMedia("(max-width: 640px)").matches ||
     (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= opts.weakCores) ||
     (navigator.deviceMemory && navigator.deviceMemory <= opts.weakMemory);
   if (weak) root.classList.add("r3d-lite");

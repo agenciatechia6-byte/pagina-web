@@ -35,8 +35,10 @@ export function initHero3D() {
   const camera = new PerspectiveCamera(55, 1, 0.1, 60);
   camera.position.z = 12;
 
-  const renderer = new WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  // En móvil, escena aligerada: menos densidad de píxeles y menos partículas.
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const renderer = new WebGLRenderer({ canvas, alpha: true, antialias: !isMobile });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 1.5));
 
   const group = new Group();
 
@@ -55,7 +57,7 @@ export function initHero3D() {
   scene.add(group);
 
   // Partículas monocromas suspendidas
-  const COUNT = 90;
+  const COUNT = isMobile ? 48 : 90;
   const positions = new Float32Array(COUNT * 3);
   for (let i = 0; i < COUNT * 3; i += 3) {
     positions[i] = (Math.random() - 0.5) * 30;

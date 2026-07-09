@@ -105,11 +105,8 @@ function initReveals() {
 /* ---------- Escena 3D del hero: carga diferida tras el primer pintado ---------- */
 function initHero3DLazy() {
   if (prefersReducedMotion) return;
-  // El 3D solo aporta en escritorio con ratón (su interacción es el parallax
-  // del cursor). En móvil/táctil lo omitimos: ahorra batería, datos (~120 kB)
-  // y protege la puntuación de rendimiento móvil.
-  const isDesktop = window.matchMedia("(hover: hover) and (min-width: 1024px)").matches;
-  if (!isDesktop) return;
+  // También en móvil (versión aligerada dentro de hero-3d.js); la carga es
+  // diferida a un momento de reposo, así no afecta al primer pintado.
   const load = () =>
     import("./effects/hero-3d.js")
       .then((m) => m.initHero3D())

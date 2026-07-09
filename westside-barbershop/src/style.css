@@ -295,6 +295,7 @@ body {
   position: sticky;
   top: 0;
   min-height: 100vh;
+  min-height: 100svh; /* iOS: sin salto al ocultarse la barra de dirección */
   display: flex;
   flex-direction: column;
   justify-content: center;

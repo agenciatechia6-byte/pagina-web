@@ -17,9 +17,10 @@ const SHAPES = [
 ];
 
 export function initFloatingShapes() {
-  // En móvil las formas en rotación provocaban overflow horizontal y gastaban
-  // batería sin aportar apenas: las mostramos solo en pantallas medianas o más.
-  if (prefersReducedMotion || window.innerWidth < 768) return;
+  if (prefersReducedMotion) return;
+  // En móvil también hay formas, pero más pequeñas (el desbordamiento
+  // horizontal ya lo evita el overflow-x: clip del body).
+  const scale = window.innerWidth < 768 ? 0.55 : 1;
 
   const items = [];
   SHAPES.forEach(([sectionId, type, size, pos, speed], i) => {
@@ -29,8 +30,8 @@ export function initFloatingShapes() {
 
     const el = document.createElement("div");
     el.className = `float-shape float-${type}`;
-    el.style.width = `${size}px`;
-    el.style.height = `${size}px`;
+    el.style.width = `${Math.round(size * scale)}px`;
+    el.style.height = `${Math.round(size * scale)}px`;
     Object.assign(el.style, pos);
     // El giro vive en ::before; el desfase se pasa por custom property para
     // que cada forma rote fuera de fase (un delay inline en el div no llega
