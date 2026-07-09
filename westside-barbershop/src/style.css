@@ -285,6 +285,15 @@ body {
 .hero-slide.is-active {
   opacity: 1;
 }
+/* Ken Burns: zoom lentísimo sincronizado en todas las diapositivas (misma
+   fase → el crossfade no salta). La portada se siente viva desde el segundo 1. */
+.hero-slide {
+  animation: kenBurns 16s ease-in-out infinite alternate;
+}
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
 
 /* ============ AppleScroll: escena sticky (#nosotros) ============ */
 .sticky-scene.pinned {
@@ -368,4 +377,5 @@ body {
   .float-shape::before { animation: none; }
   .tl-end.active { animation: none; opacity: 0.7; }
   .wa-float::after { animation: none; opacity: 0; }
+  .hero-slide { animation: none; }
 }
