@@ -102,18 +102,9 @@ function initReveals() {
   els.forEach((el) => io.observe(el));
 }
 
-/* ---------- Escena 3D del hero: carga diferida tras el primer pintado ---------- */
-function initHero3DLazy() {
-  if (prefersReducedMotion) return;
-  // También en móvil (versión aligerada dentro de hero-3d.js); la carga es
-  // diferida a un momento de reposo, así no afecta al primer pintado.
-  const load = () =>
-    import("./effects/hero-3d.js")
-      .then((m) => m.initHero3D())
-      .catch(() => {}); // sin 3D si falla la carga: la web sigue funcionando
-  if ("requestIdleCallback" in window) requestIdleCallback(load, { timeout: 2500 });
-  else setTimeout(load, 900);
-}
+/* La escena 3D del hero (wireframes + partículas) se retiró a petición del
+   dueño: en la portada solo se ven las fotos. El módulo effects/hero-3d.js
+   queda en el repo por si se quiere reactivar. */
 
 /* ---------- Año del footer ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -128,4 +119,3 @@ initTracingLine();
 initFloatingShapes();
 initMagneticButtons();
 initTiltCards();
-initHero3DLazy();
