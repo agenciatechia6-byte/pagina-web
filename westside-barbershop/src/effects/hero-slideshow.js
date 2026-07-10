@@ -54,21 +54,20 @@ export function initHeroSlideshow() {
     slides[prev].classList.remove("is-active");
   }
 
-  const start = () => {
-    if (!timer) timer = setInterval(next, INTERVAL_MS);
-  };
-  const stop = () => {
-    clearInterval(timer);
-    timer = null;
-  };
-
-  // Solo rota cuando el hero está a la vista y la pestaña activa.
-  new IntersectionObserver((entries) => {
-    entries.some((e) => e.isIntersecting) ? start() : stop();
-  }).observe(box);
-  document.addEventListener("visibilitychange", () => {
-    document.hidden ? stop() : start();
-  });
+  // Rotación desactivada: la portada es ahora estática (solo la foto inicial)
+  // const start = () => {
+  //   if (!timer) timer = setInterval(next, INTERVAL_MS);
+  // };
+  // const stop = () => {
+  //   clearInterval(timer);
+  //   timer = null;
+  // };
+  // new IntersectionObserver((entries) => {
+  //   entries.some((e) => e.isIntersecting) ? start() : stop();
+  // }).observe(box);
+  // document.addEventListener("visibilitychange", () => {
+  //   document.hidden ? stop() : start();
+  // });
 
   // Precalentar la segunda foto en cuanto haya un respiro.
   const warm = () => ensureLoaded(slides[1]);
