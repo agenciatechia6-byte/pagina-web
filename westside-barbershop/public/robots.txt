@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agenciatechia6-byte.github.io/pagina-web/sitemap.xml
