@@ -82,6 +82,38 @@ function initNav() {
   onScroll();
 }
 
+/* ---------- Menú de navegación móvil (hamburguesa accesible) ---------- */
+function initMobileMenu() {
+  const toggle = document.getElementById("navToggle");
+  const menu = document.getElementById("mobileMenu");
+  if (!toggle || !menu) return;
+
+  const setOpen = (open) => {
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    menu.hidden = !open;
+  };
+
+  toggle.addEventListener("click", () => setOpen(menu.hidden));
+  // Cerrar al navegar a una sección (los <a> del menú)
+  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+  // Cerrar con Escape y devolver el foco al botón
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !menu.hidden) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  // Cerrar al pulsar fuera del menú
+  document.addEventListener("click", (e) => {
+    if (!menu.hidden && !menu.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+  });
+  // Al pasar a escritorio, cerrar para no dejar el estado colgando
+  window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => {
+    if (e.matches) setOpen(false);
+  });
+}
+
 /* ---------- Micro-animaciones de aparición (fade simple para texto) ---------- */
 function initReveals() {
   const els = document.querySelectorAll(".reveal");
@@ -111,6 +143,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 initI18n();
 initNav();
+initMobileMenu();
 initReveals();
 initReveal3D();
 initAppleScroll();

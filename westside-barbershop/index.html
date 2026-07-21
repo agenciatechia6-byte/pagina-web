@@ -90,21 +90,51 @@
       </nav>
 
       <!-- Selector de idioma -->
-      <div class="ml-auto flex items-center gap-1 text-sm md:ml-4" role="group" aria-label="Idioma">
+      <div class="ml-auto hidden items-center gap-1 text-sm md:ml-4 md:flex" role="group" aria-label="Idioma">
         <button data-lang="es" class="lang-btn min-h-11 min-w-11 rounded px-2 font-semibold" aria-pressed="true">ES</button>
         <span class="text-paper/30">|</span>
         <button data-lang="ca" class="lang-btn min-h-11 min-w-11 rounded px-2 font-semibold text-paper/50" aria-pressed="false">CA</button>
       </div>
 
       <a href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener"
-         class="grid min-h-11 min-w-11 place-items-center text-paper/70 transition-colors hover:text-paper" aria-label="Instagram de WestSide">
+         class="hidden min-h-11 min-w-11 place-items-center text-paper/70 transition-colors hover:text-paper md:grid" aria-label="Instagram de WestSide">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
           <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
         </svg>
       </a>
 
       <a data-wa href="#" class="btn-nav-cta" data-i18n="nav.book">Reserva</a>
+
+      <!-- Hamburguesa: solo móvil -->
+      <button id="navToggle" type="button" class="nav-toggle md:hidden"
+              aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
     </div>
+
+    <!-- Menú desplegable móvil -->
+    <nav id="mobileMenu" class="nav-mobile md:hidden" aria-label="Menú" hidden>
+      <a href="#servicios" class="nav-mobile-link" data-i18n="nav.services">Servicios</a>
+      <a href="#nosotros" class="nav-mobile-link" data-i18n="nav.about">Nosotros</a>
+      <a href="#trabajos" class="nav-mobile-link" data-i18n="nav.work">Trabajos</a>
+      <a href="#opiniones" class="nav-mobile-link" data-i18n="nav.reviews">Opiniones</a>
+      <a href="#donde" class="nav-mobile-link" data-i18n="nav.where">Dónde</a>
+      <a data-wa href="#" class="btn-primary nav-mobile-cta" data-i18n="nav.book">Reserva</a>
+      <div class="nav-mobile-foot">
+        <div class="flex items-center gap-1 text-sm" role="group" aria-label="Idioma">
+          <button data-lang="es" class="lang-btn min-h-11 min-w-11 rounded px-2 font-semibold" aria-pressed="true">ES</button>
+          <span class="text-paper/30">|</span>
+          <button data-lang="ca" class="lang-btn min-h-11 min-w-11 rounded px-2 font-semibold text-paper/50" aria-pressed="false">CA</button>
+        </div>
+        <a href="https://www.instagram.com/westside_barbershop.es/" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 text-sm text-paper/70 transition-colors hover:text-paper" aria-label="Instagram de WestSide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+          </svg>
+          Instagram
+        </a>
+      </div>
+    </nav>
   </header>
 
   <!-- ================= HERO ================= -->
