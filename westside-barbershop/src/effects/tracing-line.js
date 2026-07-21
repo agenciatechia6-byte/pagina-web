@@ -55,7 +55,7 @@ export function initTracingLine() {
     const startX = isNarrow ? edge : W - edge;
     const pts = [[startX, 4]];
 
-    ["servicios", "nosotros", "trabajos", "opiniones", "donde"].forEach((id, i) => {
+    ["servicios", "nosotros", "equipo", "trabajos", "opiniones", "donde"].forEach((id, i) => {
       const el = document.getElementById(id);
       if (!el) return;
       const r = el.getBoundingClientRect();

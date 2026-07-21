@@ -84,6 +84,20 @@ body {
 .card-review {
   @apply rounded-xl border border-line bg-surface2 p-6;
 }
+
+/* ============ Equipo (tarjetas monograma) ============ */
+.team-card {
+  @apply flex flex-col gap-5 rounded-xl border border-line bg-surface p-7 transition-colors duration-300 hover:border-paper/40 sm:flex-row sm:items-start;
+}
+.team-monogram {
+  @apply grid aspect-square w-20 shrink-0 place-items-center rounded-lg border border-line bg-surface2 font-display text-4xl leading-none text-paper sm:w-24 sm:text-5xl;
+}
+.team-card-body { @apply min-w-0 flex-1; }
+.team-name { @apply font-display text-2xl uppercase leading-none tracking-tight; }
+.team-role { @apply mt-2 text-xs uppercase tracking-widest text-paper/50; }
+/* Frase destacada: diferenciada de la bio con barra lateral, mayor tamaño y color pleno */
+.team-quote { @apply mt-4 border-l-2 border-paper pl-4 text-lg font-medium leading-snug text-paper; }
+.team-bio { @apply mt-4 text-sm leading-relaxed text-paper/70; }
 .gallery-img {
   @apply aspect-[4/5] w-full rounded-lg border border-line object-cover transition-transform duration-300 hover:scale-[1.02];
 }

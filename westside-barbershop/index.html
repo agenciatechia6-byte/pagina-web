@@ -81,9 +81,10 @@
       <!-- [PENDIENTE: archivo del logo — de momento, texto] -->
       <a href="#hero" class="font-display text-xl tracking-tight" aria-label="WESTSIDE, inicio">WESTSIDE</a>
 
-      <nav class="ml-auto hidden items-center gap-6 text-sm text-paper/70 md:flex" aria-label="Secciones">
+      <nav class="ml-auto hidden items-center gap-5 text-sm text-paper/70 md:flex lg:gap-6" aria-label="Secciones">
         <a class="transition-colors hover:text-paper" href="#servicios" data-i18n="nav.services">Servicios</a>
         <a class="transition-colors hover:text-paper" href="#nosotros" data-i18n="nav.about">Nosotros</a>
+        <a class="transition-colors hover:text-paper" href="#equipo" data-i18n="nav.team">Equipo</a>
         <a class="transition-colors hover:text-paper" href="#trabajos" data-i18n="nav.work">Trabajos</a>
         <a class="transition-colors hover:text-paper" href="#opiniones" data-i18n="nav.reviews">Opiniones</a>
         <a class="transition-colors hover:text-paper" href="#donde" data-i18n="nav.where">Dónde</a>
@@ -116,6 +117,7 @@
     <nav id="mobileMenu" class="nav-mobile md:hidden" aria-label="Menú" hidden>
       <a href="#servicios" class="nav-mobile-link" data-i18n="nav.services">Servicios</a>
       <a href="#nosotros" class="nav-mobile-link" data-i18n="nav.about">Nosotros</a>
+      <a href="#equipo" class="nav-mobile-link" data-i18n="nav.team">Equipo</a>
       <a href="#trabajos" class="nav-mobile-link" data-i18n="nav.work">Trabajos</a>
       <a href="#opiniones" class="nav-mobile-link" data-i18n="nav.reviews">Opiniones</a>
       <a href="#donde" class="nav-mobile-link" data-i18n="nav.where">Dónde</a>
@@ -281,6 +283,39 @@
                class="hidden rounded-2xl border border-line object-cover shadow-[0_24px_70px_rgba(0,0,0,0.55)] lg:block" />
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ================= EQUIPO ================= -->
+  <section id="equipo" class="mx-auto max-w-[1200px] scroll-mt-20 px-5 py-24">
+    <h2 class="font-display text-[clamp(2.2rem,8vw,4.5rem)] uppercase leading-none tracking-tight" data-clip data-i18n="team.title">El equipo</h2>
+    <p class="reveal mt-4 max-w-lg text-paper/60" data-i18n="team.lead">Las manos detrás de cada corte.</p>
+
+    <div class="mt-12 grid gap-4 md:grid-cols-2" data-reveal-stagger="90">
+      <!-- Surmay -->
+      <article class="team-card" data-reveal="rise">
+        <div class="team-monogram" aria-hidden="true">S</div>
+        <div class="team-card-body">
+          <h3 class="team-name">Surmay</h3>
+          <p class="team-role">Barbero</p>
+          <!-- PENDIENTE (Elias): frase destacada EXACTA de Surmay -->
+          <blockquote class="team-quote">«Aquí irá la frase destacada de Surmay.»</blockquote>
+          <!-- PENDIENTE (Elias): biografía EXACTA de Surmay (se pega tal cual, sin modificar) -->
+          <p class="team-bio">Aquí irá la biografía de Surmay: trayectoria, especialidad y estilo. Pásame el texto exacto y lo coloco sin cambiar ni una palabra.</p>
+        </div>
+      </article>
+      <!-- José -->
+      <article class="team-card" data-reveal="rise">
+        <div class="team-monogram" aria-hidden="true">J</div>
+        <div class="team-card-body">
+          <h3 class="team-name">José</h3>
+          <p class="team-role">Barbero</p>
+          <!-- PENDIENTE (Elias): frase destacada EXACTA de José -->
+          <blockquote class="team-quote">«Aquí irá la frase destacada de José.»</blockquote>
+          <!-- PENDIENTE (Elias): biografía EXACTA de José (se pega tal cual, sin modificar) -->
+          <p class="team-bio">Aquí irá la biografía de José: trayectoria, especialidad y estilo. Pásame el texto exacto y lo coloco sin cambiar ni una palabra.</p>
+        </div>
+      </article>
     </div>
   </section>
 

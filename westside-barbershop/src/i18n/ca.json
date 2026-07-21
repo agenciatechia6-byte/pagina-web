@@ -5,6 +5,7 @@
   "nav": {
     "services": "Serveis",
     "about": "Nosaltres",
+    "team": "Equip",
     "work": "Feines",
     "reviews": "Opinions",
     "where": "On som",
@@ -40,6 +41,10 @@
     "line2": "Cada fade al mil·límetre i cada línia a pols: estil urbà treballat amb calma i amb la música posada.",
     "line3": "Westside és el punt de trobada de Lleida per als que cuiden la seva imatge. Entra amb una idea, surt amb el teu segell.",
     "cta": "Segueix-nos a Instagram"
+  },
+  "team": {
+    "title": "L'equip",
+    "lead": "Les mans darrere de cada tall."
   },
   "work": {
     "title": "Feines",

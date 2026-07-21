@@ -5,6 +5,7 @@
   "nav": {
     "services": "Servicios",
     "about": "Nosotros",
+    "team": "Equipo",
     "work": "Trabajos",
     "reviews": "Opiniones",
     "where": "Dónde",
@@ -40,6 +41,10 @@
     "line2": "Cada fade al milímetro y cada línea a pulso: estilo urbano trabajado con calma y con la música puesta.",
     "line3": "Westside es el punto de encuentro de Lleida para los que cuidan su imagen. Entra con una idea, sal con tu sello.",
     "cta": "Síguenos en Instagram"
+  },
+  "team": {
+    "title": "El equipo",
+    "lead": "Las manos detrás de cada corte."
   },
   "work": {
     "title": "Trabajos",
