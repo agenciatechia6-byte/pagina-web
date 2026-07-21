@@ -9,6 +9,9 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 
 export function initTracingLine() {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Su única razón de ser es dibujarse al hacer scroll. Con reduced-motion no
+  // aporta nada estática y sería movimiento no solicitado: se omite por completo.
+  if (prefersReducedMotion) return;
 
   const svg = document.createElementNS(SVG_NS, "svg");
   svg.setAttribute("aria-hidden", "true");
