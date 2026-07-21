@@ -1,30 +1,31 @@
-# Lleida Tech IA — Página web
+# pagina-web
 
-Web de **Lleida Tech IA**, consultoría de automatización con IA para agencias
-inmobiliarias, campings y alojamientos (Lleida, Pirineo y Cataluña).
+Monorepo con dos webs estáticas y su publicación automática en GitHub Pages.
 
-## Estructura
+| Carpeta | Web | Se publica en |
+|---|---|---|
+| [`westside-barbershop/`](westside-barbershop/) | **WestSide Barbershop** (Vite + Tailwind v4 + JS vanilla) | **raíz** del sitio de Pages |
+| [`lleida-tech-ia/`](lleida-tech-ia/) | **Lleida Tech IA** (HTML/CSS/JS estático) | `/lleida-tech-ia/` |
 
-- `index.html` — toda la página (una sola página con secciones)
-- `css/styles.css` — estilos (paleta azul marino + dorado)
-- `js/main.js` — animaciones 3D (Three.js), calculadora de pérdida, contadores y efectos
-- `js/vendor/three.min.js` — Three.js incluido en local (sin depender de CDN)
+## Publicación
 
-## Cómo verla en local
+El workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) compila
+WestSide y despliega el resultado como web raíz, conservando Lleida Tech IA en su
+subruta. Se dispara en cada push a `main` (o a mano desde la pestaña **Actions**).
+
+**Configuración única en GitHub:** *Settings → Pages → Source → «GitHub Actions»*.
+
+Tras el despliegue:
+- WestSide → `https://agenciatechia6-byte.github.io/pagina-web/`
+- Lleida Tech IA → `https://agenciatechia6-byte.github.io/pagina-web/lleida-tech-ia/`
+
+## Desarrollo local
 
 ```bash
-python3 -m http.server 8000
-# abrir http://localhost:8000
+cd westside-barbershop
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # genera dist/ (lo que publica el workflow)
 ```
 
-## Cómo publicarla gratis con GitHub Pages
-
-1. En GitHub: **Settings → Pages**
-2. En *Source*, elegir la rama principal y la carpeta `/ (root)`
-3. Guardar. En unos minutos la web estará en `https://<usuario>.github.io/pagina-web/`
-
-## Pendiente de personalizar
-
-- **Número de WhatsApp**: en `index.html` buscar `wa.me/34600000000` y poner el número real.
-- **Reseñas**: las 4 reseñas actuales son ejemplos realistas. Sustituirlas por
-  testimonios reales de clientes (nombre, negocio y zona) en la sección `#resenas`.
+Lleida Tech IA es estática: `cd lleida-tech-ia && python3 -m http.server 8000`.

@@ -1,0 +1,63 @@
+name: Deploy a GitHub Pages
+
+# Publica WestSide (proyecto Vite en /westside-barbershop) como web raíz del sitio
+# de Pages, y conserva la web de Lleida Tech IA bajo /lleida-tech-ia.
+#
+# REQUISITO (una sola vez, en GitHub):
+#   Settings → Pages → Build and deployment → Source: "GitHub Actions"
+# Si tu rama por defecto no es "main", lanza el workflow a mano desde la pestaña
+# Actions → "Deploy a GitHub Pages" → "Run workflow".
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un despliegue a la vez; no cancelar uno en curso a mitad.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: westside-barbershop/package-lock.json
+
+      - name: Instalar dependencias
+        working-directory: westside-barbershop
+        run: npm ci
+
+      - name: Compilar WestSide (Vite)
+        working-directory: westside-barbershop
+        run: npm run build
+
+      - name: Conservar Lleida Tech IA bajo /lleida-tech-ia
+        run: cp -r lleida-tech-ia westside-barbershop/dist/lleida-tech-ia
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: westside-barbershop/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
