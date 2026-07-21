@@ -166,6 +166,13 @@ body {
 .nav-mobile-foot {
   @apply mt-3 flex items-center justify-between border-t border-line pt-4;
 }
+/* En escritorio no hay hamburguesa ni panel: el nav completo vive en la barra.
+   (Este media query gana a display:grid/flex de las clases de componente, que
+   por orden de cascada anulaban la utilidad md:hidden.) */
+@media (min-width: 768px) {
+  .nav-toggle,
+  .nav-mobile { display: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .nav-toggle-bars::before,
