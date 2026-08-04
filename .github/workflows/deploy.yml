@@ -5,12 +5,14 @@ name: Deploy a GitHub Pages
 #
 # REQUISITO (una sola vez, en GitHub):
 #   Settings → Pages → Build and deployment → Source: "GitHub Actions"
-# Si tu rama por defecto no es "main", lanza el workflow a mano desde la pestaña
-# Actions → "Deploy a GitHub Pages" → "Run workflow".
+#
+# Se dispara con cada push a la rama de trabajo actual y también a "main", para
+# que siga funcionando el día que se fusione. También se puede lanzar a mano
+# desde Actions → "Deploy a GitHub Pages" → "Run workflow".
 
 on:
   push:
-    branches: [main]
+    branches: [main, claude/sharp-meitner-ddmq1o]
   workflow_dispatch:
 
 permissions:
