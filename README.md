@@ -11,13 +11,16 @@ Monorepo con dos webs estáticas y su publicación automática en GitHub Pages.
 
 El workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) compila
 WestSide y despliega el resultado como web raíz, conservando Lleida Tech IA en su
-subruta. Se dispara en cada push a `main` (o a mano desde la pestaña **Actions**).
+subruta. Se dispara en cada push a la rama de trabajo (o a mano desde la pestaña
+**Actions**).
 
 **Configuración única en GitHub:** *Settings → Pages → Source → «GitHub Actions»*.
 
 Tras el despliegue:
 - WestSide → `https://agenciatechia6-byte.github.io/pagina-web/`
 - Lleida Tech IA → `https://agenciatechia6-byte.github.io/pagina-web/lleida-tech-ia/`
+
+Para publicar con el dominio propio de la barbería, ver [`DOMINIO.md`](DOMINIO.md).
 
 ## Desarrollo local
 
