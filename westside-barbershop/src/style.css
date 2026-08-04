@@ -89,8 +89,8 @@ body {
 .team-card {
   @apply flex flex-col gap-5 rounded-xl border border-line bg-surface p-7 transition-colors duration-300 hover:border-paper/40 sm:flex-row sm:items-start;
 }
-.team-monogram {
-  @apply grid aspect-square w-20 shrink-0 place-items-center rounded-lg border border-line bg-surface2 font-display text-4xl leading-none text-paper sm:w-24 sm:text-5xl;
+.team-photo {
+  @apply aspect-[4/5] w-full shrink-0 rounded-lg border border-line object-cover sm:w-44;
 }
 .team-card-body { @apply min-w-0 flex-1; }
 .team-name { @apply font-display text-2xl uppercase leading-none tracking-tight; }
