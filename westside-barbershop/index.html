@@ -32,8 +32,8 @@
   <meta name="twitter:image" content="https://agenciatechia6-byte.github.io/pagina-web/img/og.png" />
 
   <!-- Iconos -->
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
   <!-- Fuentes: Anton (display) + Inter (cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -70,7 +70,7 @@
   }
   </script>
 
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="src/main.js"></script>
 </head>
 
 <body class="bg-ink text-paper font-body antialiased">
@@ -147,12 +147,12 @@
       <!-- Slideshow con crossfade: abre con el corte a tijera en móvil y con la
            fachada en pantallas apaisadas (hero-slideshow.js). -->
       <div class="hero-slideshow" id="hero-slideshow">
-        <img src="/assets/img/hero/hero-01.webp" alt="Corte a tijera en WestSide Barbershop, Lleida"
+        <img src="assets/img/hero/hero-01.webp" alt="Corte a tijera en WestSide Barbershop, Lleida"
              fetchpriority="high" class="hero-slide is-active" />
-        <img data-src="./assets/img/hero/hero-06.webp" alt="Afeitado a navaja en primer plano" class="hero-slide" aria-hidden="true" />
-        <img data-src="./assets/img/hero/hero-03.webp" alt="Fachada de WestSide Barbershop de noche" class="hero-slide" aria-hidden="true" />
-        <img data-src="./assets/img/hero/hero-02.webp" alt="Barbero de WestSide trabajando" class="hero-slide" aria-hidden="true" />
-        <img data-src="./assets/img/hero/hero-07.webp" alt="Sesión de corte en el local, con aro de luz" class="hero-slide" aria-hidden="true" />
+        <img data-src="assets/img/hero/hero-06.webp" alt="Afeitado a navaja en primer plano" class="hero-slide" aria-hidden="true" />
+        <img data-src="assets/img/hero/hero-03.webp" alt="Fachada de WestSide Barbershop de noche" class="hero-slide" aria-hidden="true" />
+        <img data-src="assets/img/hero/hero-02.webp" alt="Barbero de WestSide trabajando" class="hero-slide" aria-hidden="true" />
+        <img data-src="assets/img/hero/hero-07.webp" alt="Sesión de corte en el local, con aro de luz" class="hero-slide" aria-hidden="true" />
       </div>
     </div>
     <!-- Overlay oscuro degradado para legibilidad del titular (≈40-60% negro) -->
@@ -249,10 +249,10 @@
 
     <!-- Ambiente del local: banda de detalles -->
     <div class="mt-16 grid grid-cols-2 gap-3 md:gap-4">
-      <img src="/assets/img/hero/hero-04.webp" alt="Estantería de productos con skate grafiteado, interior de WestSide"
+      <img src="assets/img/hero/hero-04.webp" alt="Estantería de productos con skate grafiteado, interior de WestSide"
            loading="lazy" width="1800" height="2396" data-reveal="rise"
            class="h-52 w-full rounded-xl border border-line object-cover md:h-80" />
-      <img src="/assets/img/hero/hero-05.webp" alt="Figura decorativa bajo el lema The World Is Yours"
+      <img src="assets/img/hero/hero-05.webp" alt="Figura decorativa bajo el lema The World Is Yours"
            loading="lazy" width="1800" height="2396" data-reveal="rise" data-reveal-delay="90"
            class="h-52 w-full rounded-xl border border-line object-cover md:h-80" />
     </div>
@@ -278,7 +278,7 @@
             </div>
           </div>
           <!-- El equipo en acción -->
-          <img src="/assets/img/hero/hero-02.webp" alt="Barbero de WestSide dando el acabado a un corte"
+          <img src="assets/img/hero/hero-02.webp" alt="Barbero de WestSide dando el acabado a un corte"
                loading="lazy" width="1800" height="2396" data-reveal="tilt"
                class="hidden rounded-2xl border border-line object-cover shadow-[0_24px_70px_rgba(0,0,0,0.55)] lg:block" />
         </div>
@@ -294,7 +294,7 @@
     <div class="mt-12 grid gap-4 md:grid-cols-2" data-reveal-stagger="90">
       <!-- Surmay -->
       <article class="team-card" data-reveal="rise">
-        <img class="team-photo" src="./img/equipo-surmay.webp" alt="Surmay, barbero de WestSide, preparando un acabado en el local"
+        <img class="team-photo" src="img/equipo-surmay.webp" alt="Surmay, barbero de WestSide, preparando un acabado en el local"
              loading="lazy" width="800" height="1000" />
         <div class="team-card-body">
           <h3 class="team-name">Surmay</h3>
@@ -305,7 +305,7 @@
       </article>
       <!-- José -->
       <article class="team-card" data-reveal="rise">
-        <img class="team-photo" src="./img/equipo-jose.webp" alt="José, barbero de WestSide, perfilando un corte a un cliente"
+        <img class="team-photo" src="img/equipo-jose.webp" alt="José, barbero de WestSide, perfilando un corte a un cliente"
              loading="lazy" width="800" height="1000" />
         <div class="team-card-body">
           <h3 class="team-name">José</h3>
@@ -325,14 +325,14 @@
     <!-- Grid manual de fotos locales (sin API de Instagram: más rápido y fiable) -->
     <div class="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4" data-reveal-stagger="60">
       <!-- [FOTO: corte 1..8 — sustituir /public/img/corte-0N.webp por fotos reales del Instagram, 4:5] -->
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="/img/corte-01.webp" width="800" height="1000" alt="Low fade con línea limpia, corte real de WestSide Lleida" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="/img/corte-02.webp" width="800" height="1000" alt="Mullet con taper fade y textura, corte real de WestSide" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="/img/corte-03.webp" width="800" height="1000" alt="Diseño freestyle a máquina en el lateral, WestSide Lleida" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="/img/corte-04.webp" width="800" height="1000" alt="Corte con diseño freestyle y low fade, WestSide" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="/img/corte-05.webp" width="800" height="1000" alt="Tupé texturizado con low fade, corte real de WestSide" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="/img/corte-06.webp" width="800" height="1000" alt="Fade con línea de diseño, corte real de WestSide" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="/img/corte-07.webp" width="800" height="1000" alt="French crop con flequillo texturizado, WestSide Lleida" />
-      <img class="gallery-img" data-reveal="rise" loading="lazy" src="/img/corte-08.webp" width="800" height="1000" alt="Sesión de corte en WestSide, cliente en la silla" />
+      <img class="gallery-img" data-reveal="rise" loading="lazy" src="img/corte-01.webp" width="800" height="1000" alt="Low fade con línea limpia, corte real de WestSide Lleida" />
+      <img class="gallery-img" data-reveal="rise" loading="lazy" src="img/corte-02.webp" width="800" height="1000" alt="Mullet con taper fade y textura, corte real de WestSide" />
+      <img class="gallery-img" data-reveal="rise" loading="lazy" src="img/corte-03.webp" width="800" height="1000" alt="Diseño freestyle a máquina en el lateral, WestSide Lleida" />
+      <img class="gallery-img" data-reveal="rise" loading="lazy" src="img/corte-04.webp" width="800" height="1000" alt="Corte con diseño freestyle y low fade, WestSide" />
+      <img class="gallery-img" data-reveal="rise" loading="lazy" src="img/corte-05.webp" width="800" height="1000" alt="Tupé texturizado con low fade, corte real de WestSide" />
+      <img class="gallery-img" data-reveal="rise" loading="lazy" src="img/corte-06.webp" width="800" height="1000" alt="Fade con línea de diseño, corte real de WestSide" />
+      <img class="gallery-img" data-reveal="rise" loading="lazy" src="img/corte-07.webp" width="800" height="1000" alt="French crop con flequillo texturizado, WestSide Lleida" />
+      <img class="gallery-img" data-reveal="rise" loading="lazy" src="img/corte-08.webp" width="800" height="1000" alt="Sesión de corte en WestSide, cliente en la silla" />
     </div>
 
     <div class="reveal mt-10">
@@ -394,7 +394,7 @@
         </div>
 
         <!-- La fachada real: así se reconoce el local desde la calle -->
-        <img src="/assets/img/hero/hero-03.webp" alt="Fachada de WestSide Barbershop de noche, Carrer dels Comtes d'Urgell 8"
+        <img src="assets/img/hero/hero-03.webp" alt="Fachada de WestSide Barbershop de noche, Carrer dels Comtes d'Urgell 8"
              loading="lazy" width="1920" height="1442" data-reveal="rise"
              class="mt-10 w-full rounded-xl border border-line object-cover" />
       </div>
